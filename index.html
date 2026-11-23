@@ -1,0 +1,1880 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXUS CYBER ARENA — киберспортивный клуб премиум-класса | RTX 5090 · 540 Гц · 24/7</title>
+<meta name="description" content="NEXUS CYBER ARENA — 80 боевых ПК на RTX 5090, мониторы 540 Гц, VIP-буткемпы и турниры каждую неделю. Москва, 24/7. Бронируй онлайн.">
+<meta name="theme-color" content="#050508">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l12 7v14l-12 7-12-7V9z' fill='%23050508' stroke='%238B5CF6' stroke-width='2'/%3E%3Cpath d='M11 21V11l10 10V11' stroke='%2306B6D4' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;600;700;800;900&family=Russo+One&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        nx: {
+          bg:'#050508', deep:'#08080F', panel:'#0B0B14', line:'#1E1E30',
+          vio:'#8B5CF6', vio2:'#A78BFA', cyn:'#06B6D4', cyn2:'#67E8F9',
+          mag:'#E879F9', lime:'#A3E635', amber:'#FBBF24', rose:'#F43F5E',
+          ink:'#EDEBFF', mut:'#9B97B8'
+        }
+      },
+      fontFamily: {
+        display: ['"Russo One"','system-ui','sans-serif'],
+        orbit: ['Orbitron','sans-serif'],
+        body: ['Inter','system-ui','sans-serif'],
+        mono: ['"JetBrains Mono"','ui-monospace','monospace']
+      }
+    }
+  }
+}
+</script>
+<style>
+/* ============ БАЗА ============ */
+:root{ --zone:#8B5CF6; }
+html{ color-scheme:dark; scroll-behavior:smooth; scrollbar-color:#8B5CF6 #08080F; }
+body{ background:#050508; }
+::selection{ background:#8B5CF6; color:#050508; }
+::-webkit-scrollbar{ width:10px; height:10px; }
+::-webkit-scrollbar-track{ background:#08080F; }
+::-webkit-scrollbar-thumb{ background:linear-gradient(180deg,#8B5CF6,#06B6D4); border-radius:8px; border:2px solid #08080F; }
+::-webkit-scrollbar-thumb:hover{ background:linear-gradient(180deg,#A78BFA,#22D3EE); }
+:focus-visible{ outline:2px solid #06B6D4; outline-offset:2px; border-radius:4px; }
+
+/* ============ СТЕКЛО / ГРАДИЕНТЫ ============ */
+.glass{
+  background:linear-gradient(160deg,rgba(139,92,246,.09),rgba(11,11,20,.78) 40%,rgba(6,182,212,.06));
+  border:1px solid rgba(139,92,246,.18);
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+}
+.glass-strong{
+  background:linear-gradient(165deg,rgba(24,20,44,.96),rgba(9,9,17,.97) 55%,rgba(8,20,28,.96));
+  border:1px solid rgba(139,92,246,.3);
+  backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px);
+}
+.grad-text{
+  background:linear-gradient(92deg,#A78BFA 0%,#8B5CF6 30%,#06B6D4 68%,#67E8F9 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.prize-grad{
+  background:linear-gradient(92deg,#FDE68A,#FBBF24 55%,#F59E0B);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter:drop-shadow(0 0 14px rgba(251,191,36,.35));
+}
+.grad-border{ background:linear-gradient(120deg,rgba(139,92,246,.75),rgba(6,182,212,.65) 50%,rgba(232,121,249,.6)); padding:1.5px; border-radius:18px; }
+.grad-border > div{ border-radius:16.5px; }
+.sect-line{ height:1px; background:linear-gradient(90deg,transparent,rgba(139,92,246,.55),rgba(6,182,212,.55),transparent); }
+
+/* ============ КНОПКИ ============ */
+.cut{ clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+.cut-sm{ clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px); }
+.btn-primary{
+  position:relative; display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  background:linear-gradient(92deg,#8B5CF6,#06B6D4); color:#050508; font-weight:800;
+  cursor:pointer; overflow:hidden; border:none;
+  filter:drop-shadow(0 0 14px rgba(139,92,246,.5)) drop-shadow(0 6px 22px rgba(6,182,212,.3));
+  transition:transform .22s ease, filter .22s ease;
+}
+.btn-primary::after{
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.55) 50%,transparent 58%);
+  transform:translateX(-130%); transition:transform .55s ease;
+}
+.btn-primary:hover{ transform:translateY(-2px); filter:drop-shadow(0 0 22px rgba(139,92,246,.75)) drop-shadow(0 10px 30px rgba(6,182,212,.45)); }
+.btn-primary:hover::after{ transform:translateX(130%); }
+.btn-primary:active{ transform:translateY(0) scale(.98); }
+.btn-primary:focus-visible{ outline:none; box-shadow:inset 0 0 0 2px #fff; }
+.btn-primary:disabled{ opacity:.7; cursor:wait; transform:none; }
+.btn-ghost{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px; cursor:pointer;
+  border:1px solid rgba(6,182,212,.55); color:#67E8F9; background:rgba(6,182,212,.07);
+  transition:all .25s ease; font-weight:600;
+}
+.btn-ghost:hover{ background:rgba(6,182,212,.16); box-shadow:0 0 26px -4px rgba(6,182,212,.6), inset 0 0 18px rgba(6,182,212,.12); transform:translateY(-2px); }
+.btn-ghost:active{ transform:scale(.98); }
+.btn-line{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px; cursor:pointer;
+  border:1px solid color-mix(in srgb,var(--tc,#06B6D4) 55%,transparent);
+  color:var(--tc,#67E8F9);
+  background:color-mix(in srgb,var(--tc,#06B6D4) 8%,transparent);
+  transition:all .25s ease; font-weight:600;
+}
+.btn-line:hover:not(:disabled){ background:color-mix(in srgb,var(--tc,#06B6D4) 16%,transparent); box-shadow:0 0 26px -6px var(--tc,#06B6D4); transform:translateY(-1px); }
+.btn-line:disabled{ cursor:default; }
+.btn-done{ --tc:#A3E635 !important; }
+.btn-full{ --tc:#6E6E88 !important; cursor:not-allowed !important; }
+.spin{ width:17px; height:17px; border:2.5px solid rgba(5,5,8,.3); border-top-color:#050508; border-radius:50%; animation:rot .7s linear infinite; }
+@keyframes rot{ to{ transform:rotate(360deg); } }
+
+/* ============ HUD-УГОЛКИ ============ */
+.crn{ position:absolute; width:15px; height:15px; pointer-events:none; }
+.crn-tl{ top:-1px; left:-1px; border-top:2px solid #06B6D4; border-left:2px solid #06B6D4; }
+.crn-tr{ top:-1px; right:-1px; border-top:2px solid #8B5CF6; border-right:2px solid #8B5CF6; }
+.crn-bl{ bottom:-1px; left:-1px; border-bottom:2px solid #8B5CF6; border-left:2px solid #8B5CF6; }
+.crn-br{ bottom:-1px; right:-1px; border-bottom:2px solid #06B6D4; border-right:2px solid #06B6D4; }
+
+/* ============ ШАПКА ============ */
+#siteHeader{ transition:background .35s ease, border-color .35s ease, box-shadow .35s ease; border-bottom:1px solid transparent; }
+#siteHeader.scrolled{
+  background:rgba(6,6,12,.82); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  border-bottom-color:rgba(139,92,246,.22); box-shadow:0 12px 40px -18px rgba(139,92,246,.35);
+}
+.nav-link{ position:relative; color:#9B97B8; transition:color .25s; padding:6px 2px; }
+.nav-link::after{ content:''; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:linear-gradient(90deg,#8B5CF6,#06B6D4); transform:scaleX(0); transform-origin:left; transition:transform .3s ease; border-radius:2px; }
+.nav-link:hover{ color:#EDEBFF; text-shadow:0 0 14px rgba(103,232,249,.6); }
+.nav-link:hover::after,.nav-link.active::after{ transform:scaleX(1); }
+.nav-link.active{ color:#fff; }
+.burger span{ display:block; width:22px; height:2px; background:#EDEBFF; border-radius:2px; transition:.3s ease; }
+.burger span+span{ margin-top:5px; }
+.burger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); background:#67E8F9; }
+.burger.open span:nth-child(2){ opacity:0; }
+.burger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); background:#67E8F9; }
+#mobileMenu{ max-height:0; overflow:hidden; transition:max-height .4s cubic-bezier(.16,1,.3,1); }
+#mobileMenu.open{ max-height:440px; }
+
+/* ============ ФОНОВЫЕ СЛОИ ============ */
+.noise{
+  position:fixed; inset:0; z-index:200; pointer-events:none; opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+.scanlines{
+  position:fixed; inset:0; z-index:60; pointer-events:none; opacity:.22;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.022) 0 1px,transparent 1px 3px);
+}
+.glow-blob{ position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; }
+.cyber-floor{
+  position:absolute; left:-22%; right:-22%; bottom:-14%; height:56%; pointer-events:none; opacity:.55;
+  background-image:linear-gradient(rgba(139,92,246,.28) 1px,transparent 1px),linear-gradient(90deg,rgba(6,182,212,.22) 1px,transparent 1px);
+  background-size:46px 46px;
+  transform:perspective(620px) rotateX(62deg); transform-origin:top center;
+  animation:floorMove 1.5s linear infinite;
+  -webkit-mask-image:linear-gradient(to top,#000 45%,transparent 96%); mask-image:linear-gradient(to top,#000 45%,transparent 96%);
+}
+@keyframes floorMove{ to{ background-position:0 46px,0 0; } }
+.ghost{
+  position:absolute; z-index:0; font-family:Orbitron,sans-serif; font-weight:900; line-height:1;
+  font-size:clamp(6rem,15vw,12.5rem); color:transparent; -webkit-text-stroke:1px rgba(139,92,246,.1);
+  pointer-events:none; user-select:none; white-space:nowrap; will-change:transform;
+}
+.ghost-cyn{ -webkit-text-stroke-color:rgba(6,182,212,.1); }
+
+/* ============ ПОЯВЛЕНИЯ ============ */
+@keyframes fadeUp{ from{ opacity:0; transform:translateY(30px); } to{ opacity:1; transform:none; } }
+.h-in{ opacity:0; animation:fadeUp .9s cubic-bezier(.16,1,.3,1) forwards; }
+.js [data-reveal]{ opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1); }
+.js [data-reveal].in{ opacity:1; transform:none; }
+@keyframes bob{ 0%,100%{ transform:translateY(-5px); } 50%{ transform:translateY(6px); } }
+.float-chip{ animation:bob 5.5s ease-in-out infinite; }
+@keyframes pulseSoft{ 0%,100%{ opacity:.45; } 50%{ opacity:1; } }
+.pulse-soft{ animation:pulseSoft 2.4s ease-in-out infinite; }
+@keyframes bounceY{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(7px); } }
+.scroll-cue{ animation:bounceY 1.8s ease-in-out infinite; }
+.fan-spin{ transform-box:fill-box; transform-origin:center; animation:rot 1.35s linear infinite; }
+.ring-rot{ transform-box:fill-box; transform-origin:center; animation:rot 16s linear infinite; }
+.eq-bar{ transform-box:fill-box; transform-origin:50% 100%; animation:eq 1s ease-in-out infinite alternate; }
+@keyframes eq{ from{ transform:scaleY(.22); } to{ transform:scaleY(1); } }
+#rigFeed{ transition:opacity .3s ease; }
+#rigTilt{ transition:transform .3s ease-out; transform-style:preserve-3d; }
+
+/* ============ БЕГУЩАЯ СТРОКА ============ */
+.mq-track{ display:flex; width:max-content; animation:mq 30s linear infinite; }
+.mq-wrap:hover .mq-track{ animation-play-state:paused; }
+@keyframes mq{ to{ transform:translateX(-50%); } }
+.mq-group{ display:flex; align-items:center; gap:2.6rem; padding-right:2.6rem; }
+.mq-item{ font-family:Orbitron,sans-serif; font-weight:800; font-size:clamp(1.35rem,2.8vw,2.1rem); letter-spacing:.06em; color:#EDEBFF; text-shadow:0 0 22px rgba(139,92,246,.45); white-space:nowrap; transition:color .3s; }
+.mq-item:hover{ color:#67E8F9; }
+.mq-hollow{ color:transparent; -webkit-text-stroke:1.2px rgba(139,92,246,.8); text-shadow:none; }
+.mq-hollow:hover{ -webkit-text-stroke-color:#06B6D4; color:rgba(6,182,212,.15); }
+.mq-sep{ color:#06B6D4; font-size:1.15rem; text-shadow:0 0 12px #06B6D4; }
+.mq-sep:nth-child(4n){ color:#E879F9; text-shadow:0 0 12px #E879F9; }
+
+/* ============ ЗОНЫ ============ */
+.zone-tab{
+  position:relative; cursor:pointer; border:1px solid rgba(139,92,246,.2); background:rgba(11,11,20,.6);
+  color:#9B97B8; transition:all .28s ease; overflow:hidden;
+}
+.zone-tab:hover{ color:#EDEBFF; border-color:rgba(103,232,249,.5); transform:translateY(-2px); }
+.zone-tab.on{
+  background:linear-gradient(92deg,color-mix(in srgb,var(--zone) 88%,#fff 0%),color-mix(in srgb,var(--zone) 55%,#06B6D4));
+  color:#050508; border-color:transparent;
+  filter:drop-shadow(0 0 16px color-mix(in srgb,var(--zone) 60%,transparent));
+}
+.zone-tab.on .zt-rate{ color:rgba(5,5,8,.75); }
+#zone-body{ transition:opacity .22s ease,transform .22s ease,filter .22s ease; }
+#zone-body.swapping{ opacity:0; transform:translateY(12px); filter:blur(6px); }
+#zone-panel{ border-color:color-mix(in srgb,var(--zone) 35%,transparent); box-shadow:0 0 60px -22px color-mix(in srgb,var(--zone) 55%,transparent), inset 0 0 60px -40px color-mix(in srgb,var(--zone) 40%,transparent); transition:border-color .4s,box-shadow .4s; }
+.spec-card{ border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.028); transition:all .3s ease; }
+.spec-card:hover{ border-color:color-mix(in srgb,var(--zone) 55%,transparent); background:color-mix(in srgb,var(--zone) 7%,transparent); transform:translateY(-3px); box-shadow:0 14px 34px -18px color-mix(in srgb,var(--zone) 70%,transparent); }
+.spec-ic{ color:var(--zone); transition:color .4s; }
+#z-rate{ color:var(--zone); text-shadow:0 0 26px color-mix(in srgb,var(--zone) 65%,transparent); transition:color .4s; }
+#z-emblem{ color:var(--zone); transition:color .4s; filter:drop-shadow(0 0 12px color-mix(in srgb,var(--zone) 60%,transparent)); }
+.chip{ display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; border:1px solid rgba(139,92,246,.25); background:rgba(139,92,246,.07); font-size:12px; color:#C9C5E4; font-family:'JetBrains Mono',monospace; }
+.mm-zone{ cursor:pointer; }
+.mm-zone .mm-bg{ fill:currentColor; fill-opacity:.05; stroke:currentColor; stroke-opacity:.28; transition:all .35s ease; }
+.mm-zone:hover .mm-bg{ fill-opacity:.12; stroke-opacity:.6; }
+.mm-zone.on .mm-bg{ fill-opacity:.14; stroke-opacity:.9; }
+.mm-zone.on{ filter:drop-shadow(0 0 7px currentColor); }
+.mm-zone text{ fill:#9B97B8; transition:fill .3s; }
+.mm-zone.on text{ fill:currentColor; }
+.lg-chip{ cursor:pointer; border:1px solid rgba(255,255,255,.1); transition:all .25s; }
+.lg-chip:hover{ transform:translateY(-1px); border-color:rgba(255,255,255,.3); }
+.lg-chip.on{ border-color:color-mix(in srgb,var(--lc) 65%,transparent); background:color-mix(in srgb,var(--lc) 10%,transparent); box-shadow:0 0 18px -6px var(--lc); }
+
+/* ============ КАЛЬКУЛЯТОР ============ */
+.cz-btn{ cursor:pointer; border:1px solid rgba(139,92,246,.22); background:rgba(255,255,255,.03); color:#9B97B8; transition:all .25s ease; }
+.cz-btn:hover{ border-color:rgba(103,232,249,.5); color:#EDEBFF; transform:translateY(-2px); }
+.cz-btn.cz-on{ border-color:var(--zone); color:#fff; background:color-mix(in srgb,var(--zone) 12%,transparent); box-shadow:0 0 22px -6px var(--zone), inset 0 0 20px -12px var(--zone); }
+.cz-btn.cz-on .cz-dot{ box-shadow:0 0 10px currentColor; }
+input[type=range]{ -webkit-appearance:none; appearance:none; width:100%; height:26px; background:transparent; cursor:pointer; --fill:36%; }
+input[type=range]::-webkit-slider-runnable-track{ height:6px; border-radius:6px; background:linear-gradient(90deg,#8B5CF6 0%,#06B6D4 var(--fill),rgba(255,255,255,.09) var(--fill)); }
+input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; width:19px; height:19px; margin-top:-6.5px; border-radius:50%; background:#EDEBFF; border:3px solid #06B6D4; box-shadow:0 0 14px rgba(6,182,212,.9); transition:transform .15s; }
+input[type=range]:hover::-webkit-slider-thumb{ transform:scale(1.18); }
+input[type=range]::-moz-range-track{ height:6px; border-radius:6px; background:rgba(255,255,255,.09); }
+input[type=range]::-moz-range-progress{ height:6px; border-radius:6px; background:linear-gradient(90deg,#8B5CF6,#06B6D4); }
+input[type=range]::-moz-range-thumb{ width:15px; height:15px; border-radius:50%; background:#EDEBFF; border:3px solid #06B6D4; box-shadow:0 0 14px rgba(6,182,212,.9); }
+.step-btn{ width:42px; height:42px; display:inline-flex; align-items:center; justify-content:center; border:1px solid rgba(139,92,246,.35); border-radius:10px; color:#A78BFA; background:rgba(139,92,246,.08); cursor:pointer; transition:all .2s; }
+.step-btn:hover:not(:disabled){ background:rgba(139,92,246,.2); box-shadow:0 0 16px -4px #8B5CF6; color:#fff; }
+.step-btn:active:not(:disabled){ transform:scale(.92); }
+.step-btn:disabled{ opacity:.3; cursor:not-allowed; }
+.opt{ display:flex; align-items:center; gap:14px; padding:15px 16px; border:1px solid rgba(255,255,255,.1); border-radius:14px; background:rgba(255,255,255,.028); cursor:pointer; transition:all .25s ease; }
+.opt:hover{ border-color:rgba(103,232,249,.45); transform:translateY(-1px); }
+.opt.opt-on{ border-color:rgba(6,182,212,.6); background:rgba(6,182,212,.08); box-shadow:0 0 24px -8px rgba(6,182,212,.7), inset 0 0 24px -16px rgba(6,182,212,.6); }
+.opt-switch{ position:relative; flex:none; width:44px; height:24px; border-radius:7px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); transition:all .25s; }
+.opt-switch::after{ content:''; position:absolute; top:3px; left:3px; width:16px; height:16px; border-radius:5px; background:#6E6E88; transition:all .25s cubic-bezier(.16,1,.3,1); }
+.opt input:checked + .opt-switch{ background:linear-gradient(90deg,#8B5CF6,#06B6D4); border-color:transparent; box-shadow:0 0 14px rgba(6,182,212,.7); }
+.opt input:checked + .opt-switch::after{ left:23px; background:#050508; }
+.rc-row{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; padding:9px 0; border-bottom:1px dashed rgba(255,255,255,.09); font-family:'JetBrains Mono',monospace; font-size:12.5px; color:#9B97B8; }
+.rc-row b{ color:#EDEBFF; font-weight:600; white-space:nowrap; }
+.rc-row .neg{ color:#A3E635; }
+.rc-row .pos{ color:#67E8F9; }
+@keyframes flash{ 0%{ text-shadow:0 0 34px rgba(103,232,249,.95); } 100%{ text-shadow:0 0 16px rgba(139,92,246,.4); } }
+.flash{ animation:flash .5s ease; }
+
+/* ============ ТУРНИРЫ ============ */
+.tn-card{ transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+.tn-card::before{ content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--tc),transparent); opacity:.85; }
+.tn-card:hover{ transform:translateY(-7px); border-color:color-mix(in srgb,var(--tc) 50%,transparent); box-shadow:0 24px 60px -24px color-mix(in srgb,var(--tc) 55%,transparent); }
+.tn-ic{ color:var(--tc); border:1px solid color-mix(in srgb,var(--tc) 45%,transparent); background:color-mix(in srgb,var(--tc) 9%,transparent); box-shadow:0 0 18px -6px var(--tc); }
+.prog{ height:6px; border-radius:6px; background:rgba(255,255,255,.08); overflow:hidden; }
+.prog i{ display:block; height:100%; border-radius:6px; background:linear-gradient(90deg,var(--tc),color-mix(in srgb,var(--tc) 50%,#fff)); box-shadow:0 0 10px var(--tc); transition:width .7s cubic-bezier(.16,1,.3,1); }
+
+/* ============ ФОРМЫ / МОДАЛКИ ============ */
+.field{
+  width:100%; height:48px; padding:0 15px; border-radius:11px; color:#EDEBFF;
+  background:rgba(255,255,255,.045); border:1px solid rgba(139,92,246,.28);
+  transition:border-color .25s, box-shadow .25s, background .25s; font-size:14.5px;
+}
+.field::placeholder{ color:#6E6E88; }
+.field:focus{ outline:none; border-color:#06B6D4; background:rgba(6,182,212,.06); box-shadow:0 0 0 3px rgba(6,182,212,.16), 0 0 22px -6px rgba(6,182,212,.6); }
+.field-err{ border-color:#F43F5E !important; box-shadow:0 0 0 3px rgba(244,63,94,.15) !important; }
+select.field{ appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2367E8F9' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; padding-right:38px; cursor:pointer; }
+select.field option{ background:#0B0B14; color:#EDEBFF; }
+input[type=date].field{ cursor:pointer; }
+input[type=date]::-webkit-calendar-picker-indicator{ cursor:pointer; opacity:.75; }
+@keyframes shake{ 0%,100%{ transform:translateX(0); } 20%,60%{ transform:translateX(-6px); } 40%,80%{ transform:translateX(6px); } }
+.shake{ animation:shake .4s ease; }
+.modal-overlay{
+  position:fixed; inset:0; z-index:90; display:flex; align-items:center; justify-content:center; padding:16px;
+  background:rgba(4,4,9,.72); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  opacity:0; visibility:hidden; pointer-events:none; transition:opacity .28s ease, visibility .28s;
+}
+.modal-overlay.open{ opacity:1; visibility:visible; pointer-events:auto; }
+.modal-card{ transform:translateY(26px) scale(.96); transition:transform .34s cubic-bezier(.16,1,.3,1.15); max-height:calc(100vh - 32px); max-height:calc(100dvh - 32px); overflow-y:auto; }
+.modal-card::-webkit-scrollbar{ width:6px; }
+.modal-overlay.open .modal-card{ transform:none; }
+
+/* ============ ТОСТЫ ============ */
+#toasts{ position:fixed; top:88px; right:16px; z-index:120; display:flex; flex-direction:column; gap:12px; width:min(92vw,392px); }
+.toast{
+  position:relative; display:flex; gap:13px; align-items:flex-start; padding:15px 40px 17px 15px; border-radius:15px; overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--tcol) 45%,transparent);
+  box-shadow:0 18px 50px -16px color-mix(in srgb,var(--tcol) 55%,transparent), 0 6px 24px rgba(0,0,0,.5);
+  transform:translateX(120%); opacity:0; transition:transform .5s cubic-bezier(.16,1,.3,1), opacity .4s;
+}
+.toast.on{ transform:none; opacity:1; }
+.toast.off{ transform:translateX(120%); opacity:0; }
+.t-ic{ flex:none; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--tcol); border:1px solid color-mix(in srgb,var(--tcol) 50%,transparent); background:color-mix(in srgb,var(--tcol) 13%,transparent); box-shadow:0 0 16px -4px var(--tcol); }
+.t-ic .draw{ stroke-dasharray:26; stroke-dashoffset:26; animation:draw .55s .2s ease forwards; }
+@keyframes draw{ to{ stroke-dashoffset:0; } }
+.t-title{ font-weight:700; font-size:14.5px; color:#fff; }
+.t-msg{ font-family:'JetBrains Mono',monospace; font-size:11px; color:#9B97B8; margin-top:3px; line-height:1.55; }
+.t-x{ position:absolute; top:10px; right:10px; color:#6E6E88; cursor:pointer; padding:3px; transition:color .2s; }
+.t-x:hover{ color:#fff; }
+.t-bar{ position:absolute; left:0; bottom:0; height:2.5px; width:100%; background:linear-gradient(90deg,var(--tcol),transparent); transform-origin:left; animation:tbar linear forwards; }
+@keyframes tbar{ from{ transform:scaleX(1); } to{ transform:scaleX(0); } }
+
+/* ============ ПРОЧЕЕ ============ */
+.stat-num{ text-shadow:0 0 30px rgba(139,92,246,.55); }
+.soc-btn{ display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:11px; border:1px solid rgba(139,92,246,.25); background:rgba(139,92,246,.06); color:#9B97B8; transition:all .25s ease; }
+.soc-btn:hover{ color:var(--sc,#67E8F9); border-color:color-mix(in srgb,var(--sc,#06B6D4) 60%,transparent); background:color-mix(in srgb,var(--sc,#06B6D4) 10%,transparent); box-shadow:0 0 20px -5px var(--sc,#06B6D4); transform:translateY(-3px); }
+#backTop{ position:fixed; right:22px; bottom:22px; z-index:40; width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#67E8F9; cursor:pointer; opacity:0; transform:translateY(16px); pointer-events:none; transition:all .35s ease; }
+#backTop.show{ opacity:1; transform:none; pointer-events:auto; }
+#backTop:hover{ box-shadow:0 0 24px -4px rgba(6,182,212,.8); transform:translateY(-3px); }
+.tariff-card{ transition:transform .3s ease, box-shadow .3s ease; }
+.tariff-card:hover{ transform:translateY(-7px); box-shadow:0 26px 60px -26px color-mix(in srgb,var(--tc,#8B5CF6) 60%,transparent); }
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+  html{ scroll-behavior:auto; }
+}
+</style>
+</head>
+
+<body class="bg-nx-bg text-nx-ink font-body antialiased overflow-x-hidden">
+<noscript><div style="padding:20px;text-align:center;font-family:sans-serif;color:#EDEBFF;background:#8B5CF6">Для работы сайта включите JavaScript.</div></noscript>
+
+<!-- ФОНОВЫЕ СЛОИ -->
+<canvas id="fx" class="fixed inset-0 z-0 pointer-events-none" aria-hidden="true"></canvas>
+<div class="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
+  <div class="glow-blob w-[560px] h-[560px] -top-40 -left-40" style="background:rgba(139,92,246,.16)"></div>
+  <div class="glow-blob w-[520px] h-[520px] top-[26%] -right-52" style="background:rgba(6,182,212,.12)"></div>
+  <div class="glow-blob w-[460px] h-[460px] bottom-[-10%] left-[22%]" style="background:rgba(232,121,249,.08)"></div>
+</div>
+<div class="noise" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+
+<!-- ============ ШАПКА ============ -->
+<header id="siteHeader" class="fixed top-0 left-0 right-0 z-50">
+  <div id="scrollProgress" class="absolute top-0 left-0 h-[2.5px] w-0 bg-gradient-to-r from-nx-vio via-nx-cyn to-nx-mag" style="box-shadow:0 0 12px rgba(6,182,212,.8)"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between gap-4">
+    <a href="#top" class="flex items-center gap-3 group" aria-label="NEXUS CYBER ARENA — на главную">
+      <svg width="38" height="38" viewBox="0 0 32 32" class="transition-transform duration-500 group-hover:rotate-[30deg]" style="filter:drop-shadow(0 0 10px rgba(139,92,246,.8))">
+        <path d="M16 2l12 7v14l-12 7-12-7V9z" fill="rgba(139,92,246,.1)" stroke="#8B5CF6" stroke-width="1.8"/>
+        <path d="M11 21V11l10 10V11" stroke="#06B6D4" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="leading-none">
+        <span class="block font-orbit font-800 font-extrabold text-lg tracking-[.18em] text-white" style="text-shadow:0 0 18px rgba(139,92,246,.9)">NEXUS</span>
+        <span class="block font-mono text-[8.5px] tracking-[.42em] text-nx-cyn2 mt-1">CYBER&nbsp;ARENA</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[12.5px] font-semibold uppercase tracking-[.12em]" aria-label="Основная навигация">
+      <a class="nav-link" href="#zones" data-nav="zones">Зоны и железо</a>
+      <a class="nav-link" href="#tariffs" data-nav="tariffs">Тарифы</a>
+      <a class="nav-link" href="#calculator" data-nav="calculator">Калькулятор</a>
+      <a class="nav-link" href="#tournaments" data-nav="tournaments">Турниры<span class="inline-block w-1.5 h-1.5 rounded-full bg-nx-lime ml-1.5 align-middle pulse-soft" style="box-shadow:0 0 8px #A3E635"></span></a>
+      <a class="nav-link" href="#contacts" data-nav="contacts">Контакты</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <button type="button" data-book class="btn-primary cut-sm h-10 px-5 text-[13px] tracking-wide hidden sm:inline-flex">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+        Забронировать ПК
+      </button>
+      <button type="button" data-book class="btn-primary cut-sm h-10 px-4 text-[13px] sm:hidden">Бронь</button>
+      <button id="burger" type="button" class="burger lg:hidden p-2" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="lg:hidden absolute top-full left-0 right-0 glass-strong border-t border-nx-vio/20">
+    <nav class="px-6 py-4 flex flex-col text-sm font-semibold uppercase tracking-[.12em]" aria-label="Мобильная навигация">
+      <a class="py-3.5 border-b border-white/5 text-nx-mut hover:text-nx-cyn2 transition-colors" href="#zones">Зоны и железо</a>
+      <a class="py-3.5 border-b border-white/5 text-nx-mut hover:text-nx-cyn2 transition-colors" href="#tariffs">Тарифы</a>
+      <a class="py-3.5 border-b border-white/5 text-nx-mut hover:text-nx-cyn2 transition-colors" href="#calculator">Калькулятор</a>
+      <a class="py-3.5 border-b border-white/5 text-nx-mut hover:text-nx-cyn2 transition-colors" href="#tournaments">Турниры</a>
+      <a class="py-3.5 text-nx-mut hover:text-nx-cyn2 transition-colors" href="#contacts">Контакты</a>
+      <button type="button" data-book class="btn-primary cut-sm h-11 mt-3 mb-2 text-sm">⚡ Забронировать ПК</button>
+    </nav>
+  </div>
+</header>
+
+<main class="relative z-10">
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative overflow-hidden scroll-mt-28">
+  <div class="cyber-floor" aria-hidden="true"></div>
+  <div class="glow-blob w-[420px] h-[420px] top-24 left-[8%]" style="background:rgba(139,92,246,.2)" aria-hidden="true"></div>
+  <div class="glow-blob w-[380px] h-[380px] top-40 right-[4%]" style="background:rgba(6,182,212,.17)" aria-hidden="true"></div>
+  <svg class="absolute top-28 right-[12%] w-16 h-16 opacity-40 ring-rot hidden md:block" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4l24 14v28L32 60 8 46V18z" fill="none" stroke="#06B6D4" stroke-width="1.4" stroke-dasharray="6 5"/></svg>
+  <div class="absolute left-6 bottom-28 hidden xl:flex items-center gap-3 font-mono text-[10px] tracking-[.4em] text-nx-mut/70" style="writing-mode:vertical-rl" aria-hidden="true">EST. 2021 // MOSCOW // LAN 10G</div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-32 lg:pt-36 pb-16 lg:pb-24 grid lg:grid-cols-2 gap-14 items-center relative">
+    <!-- Левая колонка -->
+    <div>
+      <div class="h-in inline-flex items-center gap-2.5 glass rounded-full px-4 py-2 font-mono text-[11px] tracking-[.22em] text-nx-cyn2" style="animation-delay:.05s">
+        <span class="w-2 h-2 rounded-full bg-nx-lime pulse-soft" style="box-shadow:0 0 10px #A3E635"></span>
+        КЛУБ ОТКРЫТ 24/7 · МОСКВА · СЕЗОН 2026/27
+      </div>
+
+      <h1 class="mt-6 font-display uppercase leading-[1.06]">
+        <span class="h-in block text-[clamp(2.1rem,5.4vw,4.1rem)] text-white" style="animation-delay:.15s;text-shadow:0 0 40px rgba(139,92,246,.5)">Играй на<br>максималках.</span>
+        <span class="h-in block text-[clamp(1.7rem,4.2vw,3.2rem)] grad-text mt-2" style="animation-delay:.3s">RTX 5090 &amp; 540 ГЦ</span>
+      </h1>
+
+      <p class="h-in mt-6 text-nx-mut text-[15.5px] leading-relaxed max-w-xl" style="animation-delay:.42s">
+        80 боевых станций на топовом железе, мониторы 540 Гц, кресла, в которых не устаёшь,
+        и атмосфера LAN-финала — каждый день. Приходи один или собирай сквад:
+        место найдётся всем, а пинг будет ниже, чем твои отговорки.
+      </p>
+
+      <div class="h-in mt-8 flex flex-wrap gap-4" style="animation-delay:.54s">
+        <a href="#zones" class="btn-primary cut h-13 px-8 py-3.5 text-[15px] tracking-wide">
+          Выбрать зону
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#calculator" class="btn-ghost rounded-xl h-13 px-7 py-3.5 text-[15px]">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"/></svg>
+          Рассчитать пакет
+        </a>
+      </div>
+
+      <div id="heroStats" class="h-in mt-11 grid grid-cols-3 max-w-xl divide-x divide-white/10 glass rounded-2xl overflow-hidden" style="animation-delay:.68s">
+        <div class="p-5 text-center">
+          <div class="font-orbit font-extrabold text-3xl sm:text-4xl text-white stat-num"><span data-count="80">0</span></div>
+          <div class="font-mono text-[10px] tracking-[.18em] text-nx-mut mt-2 uppercase">мощных ПК</div>
+        </div>
+        <div class="p-5 text-center">
+          <div class="font-orbit font-extrabold text-3xl sm:text-4xl grad-text"><span data-count="4">0</span></div>
+          <div class="font-mono text-[10px] tracking-[.18em] text-nx-mut mt-2 uppercase">VIP-буткемпа</div>
+        </div>
+        <div class="p-5 text-center">
+          <div class="font-orbit font-extrabold text-3xl sm:text-4xl text-nx-cyn2" style="text-shadow:0 0 26px rgba(6,182,212,.7)">24/7</div>
+          <div class="font-mono text-[10px] tracking-[.18em] text-nx-mut mt-2 uppercase">без выходных</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Правая колонка: живая станция -->
+    <div class="h-in relative" style="animation-delay:.5s;perspective:1100px">
+      <div id="rigTilt" class="relative glass rounded-2xl p-5 sm:p-6 max-w-[480px] mx-auto">
+        <i class="crn crn-tl"></i><i class="crn crn-tr"></i><i class="crn crn-bl"></i><i class="crn crn-br"></i>
+
+        <div class="flex items-center justify-between font-mono text-[10.5px] tracking-[.2em]">
+          <span class="flex items-center gap-2 text-nx-lime"><span class="w-2 h-2 rounded-full bg-nx-lime pulse-soft" style="box-shadow:0 0 8px #A3E635"></span>STATION_07 // ONLINE</span>
+          <span id="rigClock" class="text-nx-mut">MSK 00:00:00</span>
+        </div>
+
+        <div class="relative mt-4">
+          <svg viewBox="0 0 320 372" class="w-full h-auto" role="img" aria-label="Схема игрового ПК: RTX 5090, Ryzen 9, DDR5, вентиляторы RGB">
+            <defs>
+              <linearGradient id="rgbGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#8B5CF6"><animate attributeName="stop-color" values="#8B5CF6;#06B6D4;#E879F9;#8B5CF6" dur="6s" repeatCount="indefinite"/></stop>
+                <stop offset="1" stop-color="#06B6D4"><animate attributeName="stop-color" values="#06B6D4;#E879F9;#8B5CF6;#06B6D4" dur="6s" repeatCount="indefinite"/></stop>
+              </linearGradient>
+              <linearGradient id="ramGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#67E8F9"><animate attributeName="stop-color" values="#67E8F9;#E879F9;#A78BFA;#67E8F9" dur="4.5s" repeatCount="indefinite"/></stop>
+                <stop offset="1" stop-color="#8B5CF6" stop-opacity=".25"/>
+              </linearGradient>
+              <linearGradient id="gpuGlow" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#06B6D4" stop-opacity=".85"/><stop offset="1" stop-color="#8B5CF6" stop-opacity=".15"/>
+              </linearGradient>
+              <filter id="ledGlow" x="-40%" y="-300%" width="180%" height="700%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+
+            <!-- корпус -->
+            <rect x="38" y="16" width="244" height="340" rx="16" fill="rgba(10,10,20,.72)" stroke="rgba(139,92,246,.5)" stroke-width="1.6"/>
+            <rect x="48" y="26" width="224" height="320" rx="11" fill="none" stroke="rgba(103,232,249,.14)" stroke-width="1"/>
+
+            <!-- три вентилятора -->
+            <g>
+              <circle cx="92" cy="76" r="33" fill="none" stroke="url(#rgbGrad)" stroke-width="2.4"/>
+              <circle cx="92" cy="76" r="37" fill="none" stroke="url(#rgbGrad)" stroke-width="1" opacity=".25"/>
+              <g class="fan-spin">
+                <rect x="89" y="52" width="6" height="20" rx="3" fill="url(#rgbGrad)" opacity=".9"/>
+                <rect x="89" y="52" width="6" height="20" rx="3" fill="url(#rgbGrad)" opacity=".9" transform="rotate(90 92 76)"/>
+                <rect x="89" y="52" width="6" height="20" rx="3" fill="url(#rgbGrad)" opacity=".9" transform="rotate(180 92 76)"/>
+                <rect x="89" y="52" width="6" height="20" rx="3" fill="url(#rgbGrad)" opacity=".9" transform="rotate(270 92 76)"/>
+              </g>
+              <circle cx="92" cy="76" r="7" fill="#0B0B14" stroke="#67E8F9" stroke-width="1.6"/>
+            </g>
+            <g>
+              <circle cx="92" cy="156" r="33" fill="none" stroke="url(#rgbGrad)" stroke-width="2.4"/>
+              <circle cx="92" cy="156" r="37" fill="none" stroke="url(#rgbGrad)" stroke-width="1" opacity=".25"/>
+              <g class="fan-spin" style="animation-delay:-.4s">
+                <rect x="89" y="132" width="6" height="20" rx="3" fill="url(#rgbGrad)" opacity=".9"/>
+                <rect x="89" y="132" width="6" height="20" rx="3" fill="url(#rgbGrad)" opacity=".9" transform="rotate(90 92 156)"/>
+                <rect x="89" y="132" width="6" height="20" rx="3" fill="url(#rgbGrad)" opacity=".9" transform="rotate(180 92 156)"/>
+                <rect x="89" y="132" width="6" height="20" rx="3" fill="url(#rgbGrad)" opacity=".9" transform="rotate(270 92 156)"/>
+              </g>
+              <circle cx="92" cy="156" r="7" fill="#0B0B14" stroke="#A78BFA" stroke-width="1.6"/>
+            </g>
+            <g>
+              <circle cx="92" cy="236" r="33" fill="none" stroke="url(#rgbGrad)" stroke-width="2.4"/>
+              <circle cx="92" cy="236" r="37" fill="none" stroke="url(#rgbGrad)" stroke-width="1" opacity=".25"/>
+              <g class="fan-spin" style="animation-delay:-.8s">
+                <rect x="89" y="212" width="6" height="20" rx="3" fill="url(#rgbGrad)" opacity=".9"/>
+                <rect x="89" y="212" width="6" height="20" rx="3" fill="url(#rgbGrad)" opacity=".9" transform="rotate(90 92 236)"/>
+                <rect x="89" y="212" width="6" height="20" rx="3" fill="url(#rgbGrad)" opacity=".9" transform="rotate(180 92 236)"/>
+                <rect x="89" y="212" width="6" height="20" rx="3" fill="url(#rgbGrad)" opacity=".9" transform="rotate(270 92 236)"/>
+              </g>
+              <circle cx="92" cy="236" r="7" fill="#0B0B14" stroke="#E879F9" stroke-width="1.6"/>
+            </g>
+
+            <!-- CPU -->
+            <rect x="146" y="46" width="58" height="58" rx="7" fill="#0D0D1A" stroke="rgba(139,92,246,.65)" stroke-width="1.5"/>
+            <rect x="158" y="58" width="34" height="34" rx="4" fill="none" stroke="rgba(103,232,249,.5)" stroke-width="1.2"/>
+            <text x="175" y="79" text-anchor="middle" font-family="Orbitron" font-size="8.5" font-weight="700" fill="#67E8F9">CPU</text>
+            <text x="175" y="116" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#9B97B8">9950X3D</text>
+
+            <!-- RAM -->
+            <g>
+              <rect x="216" y="46" width="9" height="62" rx="2.5" fill="url(#ramGrad)"/>
+              <rect x="229" y="46" width="9" height="62" rx="2.5" fill="url(#ramGrad)" opacity=".85"/>
+              <rect x="242" y="46" width="9" height="62" rx="2.5" fill="url(#ramGrad)" opacity=".92"/>
+              <rect x="255" y="46" width="9" height="62" rx="2.5" fill="url(#ramGrad)" opacity=".8"/>
+              <text x="240" y="120" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#9B97B8">DDR5 64GB</text>
+            </g>
+
+            <!-- GPU -->
+            <rect x="140" y="134" width="128" height="44" rx="7" fill="#0D0D1A" stroke="rgba(6,182,212,.7)" stroke-width="1.6"/>
+            <rect x="146" y="168" width="116" height="5" rx="2.5" fill="url(#gpuGlow)" class="pulse-soft"/>
+            <circle cx="160" cy="152" r="9" fill="none" stroke="rgba(103,232,249,.6)" stroke-width="1.4"/>
+            <circle cx="184" cy="152" r="9" fill="none" stroke="rgba(167,139,250,.6)" stroke-width="1.4"/>
+            <text x="234" y="150" text-anchor="middle" font-family="Orbitron" font-size="11.5" font-weight="800" fill="#67E8F9" style="text-shadow:0 0 8px #06B6D4">RTX 5090</text>
+            <text x="234" y="163" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#9B97B8">32 GB GDDR7</text>
+
+            <!-- SSD -->
+            <rect x="140" y="192" width="128" height="16" rx="4" fill="#0D0D1A" stroke="rgba(139,92,246,.4)" stroke-width="1.2"/>
+            <text x="204" y="203" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#A78BFA">NVMe 2TB · 14 000 MB/s</text>
+
+            <!-- эквалайзер нагрузки -->
+            <g fill="url(#rgbGrad)">
+              <rect class="eq-bar" x="142" y="228" width="7" height="34" rx="2" style="animation-delay:-.1s"/>
+              <rect class="eq-bar" x="152" y="228" width="7" height="34" rx="2" style="animation-delay:-.5s;animation-duration:.8s"/>
+              <rect class="eq-bar" x="162" y="228" width="7" height="34" rx="2" style="animation-delay:-.2s;animation-duration:1.1s"/>
+              <rect class="eq-bar" x="172" y="228" width="7" height="34" rx="2" style="animation-delay:-.7s"/>
+              <rect class="eq-bar" x="182" y="228" width="7" height="34" rx="2" style="animation-delay:-.35s;animation-duration:.9s"/>
+              <rect class="eq-bar" x="192" y="228" width="7" height="34" rx="2" style="animation-delay:-.9s"/>
+              <rect class="eq-bar" x="202" y="228" width="7" height="34" rx="2" style="animation-delay:-.15s;animation-duration:1.2s"/>
+              <rect class="eq-bar" x="212" y="228" width="7" height="34" rx="2" style="animation-delay:-.6s"/>
+              <rect class="eq-bar" x="222" y="228" width="7" height="34" rx="2" style="animation-delay:-.45s;animation-duration:.85s"/>
+              <rect class="eq-bar" x="232" y="228" width="7" height="34" rx="2" style="animation-delay:-.8s"/>
+              <rect class="eq-bar" x="242" y="228" width="7" height="34" rx="2" style="animation-delay:-.25s;animation-duration:1.05s"/>
+              <rect class="eq-bar" x="252" y="228" width="7" height="34" rx="2" style="animation-delay:-.55s"/>
+            </g>
+
+            <!-- PSU -->
+            <rect x="52" y="284" width="216" height="44" rx="8" fill="#0D0D1A" stroke="rgba(139,92,246,.35)" stroke-width="1.3"/>
+            <text x="66" y="303" font-family="JetBrains Mono" font-size="8.5" fill="#9B97B8">PSU · 1200W PLATINUM</text>
+            <text x="66" y="317" font-family="JetBrains Mono" font-size="8.5" fill="#67E8F9">LAN 10G · PING &lt; 5 MS</text>
+            <circle cx="248" cy="306" r="9" fill="none" stroke="rgba(163,230,53,.7)" stroke-width="1.5"/>
+            <circle cx="248" cy="306" r="3.5" fill="#A3E635" class="pulse-soft"/>
+
+            <!-- LED-полоса -->
+            <rect x="52" y="338" width="216" height="4" rx="2" fill="url(#rgbGrad)" filter="url(#ledGlow)"/>
+          </svg>
+
+          <!-- плавающие чипы -->
+          <div class="float-chip absolute -top-3 -right-2 sm:-right-5 chip !border-nx-cyn/50 !bg-nx-bg/80 text-nx-cyn2" style="animation-delay:-1s;box-shadow:0 0 18px -4px rgba(6,182,212,.7)">540 HZ</div>
+          <div class="float-chip absolute top-[38%] -left-2 sm:-left-6 chip !border-nx-vio/50 !bg-nx-bg/80 text-nx-vio2" style="animation-delay:-2.6s;box-shadow:0 0 18px -4px rgba(139,92,246,.7)">RTX 5090 32GB</div>
+          <div class="float-chip absolute -bottom-3 right-6 chip !border-nx-mag/50 !bg-nx-bg/80 text-nx-mag" style="animation-delay:-4s;box-shadow:0 0 18px -4px rgba(232,121,249,.7)">0.2 MS</div>
+        </div>
+
+        <!-- телеметрия -->
+        <div class="mt-4 grid grid-cols-4 gap-2 font-mono text-center">
+          <div class="rounded-lg border border-white/10 bg-white/[.03] py-2.5">
+            <div class="text-[9px] tracking-[.2em] text-nx-mut">FPS</div>
+            <div id="tlFps" class="text-nx-cyn2 text-base font-bold mt-0.5">537</div>
+          </div>
+          <div class="rounded-lg border border-white/10 bg-white/[.03] py-2.5">
+            <div class="text-[9px] tracking-[.2em] text-nx-mut">GPU °C</div>
+            <div id="tlTemp" class="text-nx-vio2 text-base font-bold mt-0.5">57</div>
+          </div>
+          <div class="rounded-lg border border-white/10 bg-white/[.03] py-2.5">
+            <div class="text-[9px] tracking-[.2em] text-nx-mut">PING</div>
+            <div id="tlPing" class="text-nx-lime text-base font-bold mt-0.5">4</div>
+          </div>
+          <div class="rounded-lg border border-white/10 bg-white/[.03] py-2.5">
+            <div class="text-[9px] tracking-[.2em] text-nx-mut">LOAD %</div>
+            <div id="tlLoad" class="text-nx-mag text-base font-bold mt-0.5">96</div>
+          </div>
+        </div>
+        <div class="mt-2 h-1 rounded-full bg-white/10 overflow-hidden"><div id="tlFpsBar" class="h-full rounded-full bg-gradient-to-r from-nx-vio to-nx-cyn transition-all duration-700" style="width:89%;box-shadow:0 0 8px #06B6D4"></div></div>
+        <div id="rigFeed" class="mt-3 font-mono text-[10.5px] text-nx-mut truncate">STATION_12 ▸ ACE в CS2 на Mirage</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#zones" class="scroll-cue absolute bottom-5 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1 text-nx-mut hover:text-nx-cyn2 transition-colors" aria-label="Листай вниз">
+    <span class="font-mono text-[9px] tracking-[.35em]">ЛИСТАЙ</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
+</section>
+
+<!-- ============ БЕГУЩАЯ СТРОКА ============ -->
+<div class="relative py-2 -rotate-1 scale-[1.02] my-4">
+  <div class="mq-wrap overflow-hidden border-y border-nx-vio/25 bg-nx-panel/80 py-4 backdrop-blur-sm" style="box-shadow:0 0 50px -18px rgba(139,92,246,.5)">
+    <div class="mq-track">
+      <div class="mq-group">
+        <span class="mq-item">CS2</span><span class="mq-sep">✦</span>
+        <span class="mq-item mq-hollow">DOTA 2</span><span class="mq-sep">✦</span>
+        <span class="mq-item">VALORANT</span><span class="mq-sep">✦</span>
+        <span class="mq-item mq-hollow">FC 25</span><span class="mq-sep">✦</span>
+        <span class="mq-item">WARZONE</span><span class="mq-sep">✦</span>
+        <span class="mq-item mq-hollow">APEX LEGENDS</span><span class="mq-sep">✦</span>
+        <span class="mq-item">FORTNITE</span><span class="mq-sep">✦</span>
+        <span class="mq-item mq-hollow">PUBG</span><span class="mq-sep">✦</span>
+      </div>
+      <div class="mq-group" aria-hidden="true">
+        <span class="mq-item">CS2</span><span class="mq-sep">✦</span>
+        <span class="mq-item mq-hollow">DOTA 2</span><span class="mq-sep">✦</span>
+        <span class="mq-item">VALORANT</span><span class="mq-sep">✦</span>
+        <span class="mq-item mq-hollow">FC 25</span><span class="mq-sep">✦</span>
+        <span class="mq-item">WARZONE</span><span class="mq-sep">✦</span>
+        <span class="mq-item mq-hollow">APEX LEGENDS</span><span class="mq-sep">✦</span>
+        <span class="mq-item">FORTNITE</span><span class="mq-sep">✦</span>
+        <span class="mq-item mq-hollow">PUBG</span><span class="mq-sep">✦</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ЗОНЫ И ЖЕЛЕЗО ============ -->
+<section id="zones" class="relative py-20 lg:py-28 scroll-mt-24 overflow-hidden">
+  <div class="ghost -right-[3%] top-6" data-speed="0.1" aria-hidden="true">ARSENAL</div>
+  <div class="glow-blob w-[420px] h-[420px] top-1/3 -left-48" style="background:rgba(139,92,246,.12)" aria-hidden="true"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+    <div class="flex items-center gap-4 font-mono text-[11px] tracking-[.35em] text-nx-cyn2" data-reveal>
+      <span>01 // АРСЕНАЛ</span><span class="sect-line flex-1"></span><span class="text-nx-mut hidden sm:block">80 СТАНЦИЙ · 3 ЗОНЫ</span>
+    </div>
+    <h2 class="mt-4 font-display uppercase text-[clamp(1.7rem,3.6vw,2.7rem)] text-white" data-reveal>
+      Игровые зоны <span class="grad-text">и железо</span>
+    </h2>
+    <p class="mt-3 text-nx-mut max-w-2xl text-[15px]" data-reveal>Выбери сцену под свой стиль: от вечерних каток с друзьями до приватного буткемпа со стрим-сетапом. Кликай по вкладкам или прямо по схеме арены.</p>
+
+    <!-- вкладки -->
+    <div class="mt-8 grid grid-cols-3 gap-2 sm:gap-3 max-w-2xl" role="tablist" aria-label="Игровые зоны" data-reveal>
+      <button class="zone-tab cut-sm px-3 sm:px-5 py-3.5 text-left" role="tab" data-zone="standard" aria-selected="false">
+        <span class="flex items-center gap-2 font-orbit font-bold text-[11px] sm:text-[13px] tracking-wider"><span class="w-2 h-2 rounded-full flex-none" style="background:#06B6D4;box-shadow:0 0 8px #06B6D4"></span>STANDARD</span>
+        <span class="zt-rate block font-mono text-[10px] mt-1 opacity-80">150 ₽/час</span>
+      </button>
+      <button class="zone-tab cut-sm px-3 sm:px-5 py-3.5 text-left" role="tab" data-zone="pro" aria-selected="false">
+        <span class="flex items-center gap-2 font-orbit font-bold text-[11px] sm:text-[13px] tracking-wider"><span class="w-2 h-2 rounded-full flex-none" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></span>PRO ARENA</span>
+        <span class="zt-rate block font-mono text-[10px] mt-1 opacity-80">250 ₽/час</span>
+      </button>
+      <button class="zone-tab cut-sm px-3 sm:px-5 py-3.5 text-left" role="tab" data-zone="vip" aria-selected="false">
+        <span class="flex items-center gap-2 font-orbit font-bold text-[11px] sm:text-[13px] tracking-wider"><span class="w-2 h-2 rounded-full flex-none" style="background:#E879F9;box-shadow:0 0 8px #E879F9"></span>VIP</span>
+        <span class="zt-rate block font-mono text-[10px] mt-1 opacity-80">450 ₽/час</span>
+      </button>
+    </div>
+
+    <div class="mt-6 grid lg:grid-cols-[1fr_400px] gap-6 items-start">
+      <!-- панель зоны -->
+      <div id="zone-panel" class="glass rounded-2xl p-6 sm:p-8 relative" data-reveal role="tabpanel" aria-live="polite">
+        <i class="crn crn-tl"></i><i class="crn crn-br"></i>
+        <div id="zone-body">
+          <div class="flex flex-wrap items-start justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div id="z-emblem" class="relative w-16 h-16 flex-none">
+                <svg viewBox="0 0 64 64" class="w-full h-full">
+                  <path d="M32 5l23 13.5v27L32 59 9 45.5v-27z" fill="color-mix(in srgb,currentColor 10%,transparent)" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 6" opacity=".55" class="ring-rot"/>
+                  <text id="z-emblem-letter" x="32" y="41" text-anchor="middle" font-family="Orbitron" font-size="24" font-weight="800" fill="currentColor">P</text>
+                </svg>
+              </div>
+              <div>
+                <h3 id="z-name" class="font-orbit font-extrabold text-xl sm:text-2xl tracking-wide text-white">PRO ARENA</h3>
+                <div id="z-tag" class="font-mono text-[11px] text-nx-mut mt-1 tracking-wider">Сцена клуба · 24 станции</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 glass rounded-full px-3.5 py-2">
+              <span id="z-free-dot" class="w-2 h-2 rounded-full bg-nx-lime pulse-soft" style="box-shadow:0 0 8px #A3E635"></span>
+              <span id="z-free" class="font-mono text-[11px] text-nx-ink">Свободно: 9 из 24 мест</span>
+            </div>
+          </div>
+
+          <p id="z-desc" class="mt-5 text-nx-mut text-[14.5px] leading-relaxed"></p>
+
+          <div class="mt-6 grid sm:grid-cols-2 gap-3">
+            <div class="spec-card rounded-xl p-4 flex gap-3.5">
+              <svg class="spec-ic flex-none mt-0.5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="2" y="7" width="20" height="10" rx="2"/><circle cx="14.5" cy="12" r="3"/><path d="M5.5 10.5h3M6 17v2.5M10 17v2.5M14 17v2.5M18 17v2.5"/></svg>
+              <div><div class="font-mono text-[9.5px] tracking-[.25em] text-nx-mut uppercase">Видеокарта</div><div id="z-gpu" class="font-semibold text-[14px] mt-1 text-white"></div></div>
+            </div>
+            <div class="spec-card rounded-xl p-4 flex gap-3.5">
+              <svg class="spec-ic flex-none mt-0.5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><rect x="10.2" y="10.2" width="3.6" height="3.6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>
+              <div><div class="font-mono text-[9.5px] tracking-[.25em] text-nx-mut uppercase">Процессор</div><div id="z-cpu" class="font-semibold text-[14px] mt-1 text-white"></div></div>
+            </div>
+            <div class="spec-card rounded-xl p-4 flex gap-3.5">
+              <svg class="spec-ic flex-none mt-0.5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="2" y="4" width="20" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+              <div><div class="font-mono text-[9.5px] tracking-[.25em] text-nx-mut uppercase">Монитор</div><div id="z-mon" class="font-semibold text-[14px] mt-1 text-white"></div></div>
+            </div>
+            <div class="spec-card rounded-xl p-4 flex gap-3.5">
+              <svg class="spec-ic flex-none mt-0.5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="5"/><path d="M12 6v4"/></svg>
+              <div><div class="font-mono text-[9.5px] tracking-[.25em] text-nx-mut uppercase">Девайсы</div><div id="z-gear" class="font-semibold text-[14px] mt-1 text-white"></div><div id="z-gear-sub" class="font-mono text-[10.5px] text-nx-mut mt-1"></div></div>
+            </div>
+          </div>
+
+          <div id="z-perks" class="mt-5 flex flex-wrap gap-2"></div>
+
+          <div class="mt-7 pt-6 border-t border-white/10 flex flex-wrap items-end justify-between gap-5">
+            <div>
+              <div class="font-mono text-[10px] tracking-[.3em] text-nx-mut uppercase">Цена за час</div>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span id="z-rate" class="font-orbit font-extrabold text-[2.6rem] leading-none">250</span>
+                <span class="font-orbit text-lg text-nx-mut">₽/час</span>
+              </div>
+              <div class="font-mono text-[10.5px] text-nx-mut mt-1.5">минимальная бронь — 1 час</div>
+            </div>
+            <button id="z-book" type="button" data-book data-zone="pro" class="btn-primary cut h-12 px-7 text-[14px] tracking-wide">
+              Забронировать зону
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- схема арены -->
+      <div class="glass rounded-2xl p-5" data-reveal style="transition-delay:.12s">
+        <div class="flex items-center justify-between font-mono text-[10.5px] tracking-[.25em]">
+          <span class="text-nx-cyn2">СХЕМА АРЕНЫ</span>
+          <span class="flex items-center gap-1.5 text-nx-lime"><span class="w-1.5 h-1.5 rounded-full bg-nx-lime pulse-soft"></span>LIVE</span>
+        </div>
+        <svg viewBox="0 0 440 330" class="w-full h-auto mt-3" role="img" aria-label="Интерактивная схема клуба: кликни по зоне">
+          <rect x="6" y="6" width="428" height="318" rx="14" fill="rgba(9,9,17,.6)" stroke="rgba(139,92,246,.3)" stroke-width="1.5"/>
+          <g id="mm-vip" class="mm-zone" style="color:#E879F9" data-zone="vip" tabindex="0" role="button" aria-label="Выбрать VIP Bootcamp">
+            <text x="24" y="30" font-family="JetBrains Mono" font-size="10" letter-spacing="2">VIP BOOTCAMP</text>
+            <g id="mm-vip-rooms"></g>
+            <rect class="mm-bg" x="20" y="38" width="186" height="80" rx="8" stroke-width="1.4" fill-opacity="0" style="fill:transparent"/>
+          </g>
+          <g id="mm-pro" class="mm-zone" style="color:#8B5CF6" data-zone="pro" tabindex="0" role="button" aria-label="Выбрать Pro Arena">
+            <rect class="mm-bg" x="220" y="38" width="196" height="80" rx="8" stroke-width="1.4"/>
+            <text x="232" y="30" font-family="JetBrains Mono" font-size="10" letter-spacing="2">PRO ARENA</text>
+            <g id="mm-dots-pro"></g>
+          </g>
+          <g id="mm-standard" class="mm-zone" style="color:#06B6D4" data-zone="standard" tabindex="0" role="button" aria-label="Выбрать Standard Zone">
+            <rect class="mm-bg" x="20" y="152" width="284" height="120" rx="8" stroke-width="1.4"/>
+            <text x="24" y="145" font-family="JetBrains Mono" font-size="10" letter-spacing="2">STANDARD ZONE</text>
+            <g id="mm-dots-standard"></g>
+          </g>
+          <g aria-hidden="true">
+            <rect x="320" y="152" width="96" height="120" rx="8" fill="rgba(251,191,36,.05)" stroke="rgba(251,191,36,.3)" stroke-width="1.2"/>
+            <text x="332" y="175" font-family="JetBrains Mono" font-size="9.5" fill="#FBBF24" letter-spacing="1.5">BAR</text>
+            <text x="332" y="192" font-family="JetBrains Mono" font-size="8" fill="#9B97B8">CHILL + PS5</text>
+            <circle cx="345" cy="222" r="9" fill="none" stroke="rgba(251,191,36,.4)" stroke-width="1.2"/>
+            <circle cx="375" cy="222" r="9" fill="none" stroke="rgba(251,191,36,.4)" stroke-width="1.2"/>
+            <rect x="334" y="242" width="52" height="14" rx="6" fill="none" stroke="rgba(251,191,36,.35)" stroke-width="1.2"/>
+          </g>
+          <g aria-hidden="true">
+            <rect x="196" y="317" width="48" height="7" rx="3" fill="#050508" stroke="#06B6D4" stroke-width="1.4"/>
+            <circle cx="220" cy="308" r="4" fill="#A3E635">
+              <animate attributeName="r" values="3;7;3" dur="2.2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="1;.25;1" dur="2.2s" repeatCount="indefinite"/>
+            </circle>
+            <text x="220" y="296" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#9B97B8" letter-spacing="2">ВХОД</text>
+          </g>
+        </svg>
+        <div class="mt-3 grid grid-cols-3 gap-2">
+          <button type="button" class="lg-chip rounded-lg px-2 py-2 text-center" data-zone="standard" style="--lc:#06B6D4">
+            <span class="block font-mono text-[9px] tracking-wider text-nx-mut">STANDARD</span>
+            <span class="block font-orbit font-bold text-sm mt-0.5" style="color:#06B6D4"><span id="lg-free-standard">14</span> свод.</span>
+          </button>
+          <button type="button" class="lg-chip rounded-lg px-2 py-2 text-center" data-zone="pro" style="--lc:#8B5CF6">
+            <span class="block font-mono text-[9px] tracking-wider text-nx-mut">PRO</span>
+            <span class="block font-orbit font-bold text-sm mt-0.5" style="color:#A78BFA"><span id="lg-free-pro">9</span> свод.</span>
+          </button>
+          <button type="button" class="lg-chip rounded-lg px-2 py-2 text-center" data-zone="vip" style="--lc:#E879F9">
+            <span class="block font-mono text-[9px] tracking-wider text-nx-mut">VIP</span>
+            <span class="block font-orbit font-bold text-sm mt-0.5" style="color:#E879F9"><span id="lg-free-vip">2</span> комн.</span>
+          </button>
+        </div>
+        <p class="mt-3 font-mono text-[10px] text-nx-mut leading-relaxed">▸ яркие точки — свободные места. Кликни по зоне на схеме, чтобы посмотреть железо.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ТАРИФЫ ============ -->
+<section id="tariffs" class="relative py-20 lg:py-28 scroll-mt-24 overflow-hidden">
+  <div class="glow-blob w-[500px] h-[500px] top-10 left-1/2 -translate-x-1/2" style="background:rgba(139,92,246,.1)" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+    <div class="flex items-center gap-4 font-mono text-[11px] tracking-[.35em] text-nx-vio2" data-reveal>
+      <span>02 // ТАРИФЫ</span><span class="sect-line flex-1"></span><span class="text-nx-mut hidden sm:block">ЧЕСТНЫЕ ЦЕНЫ · БЕЗ СКРЫТЫХ УСЛОВИЙ</span>
+    </div>
+    <h2 class="mt-4 font-display uppercase text-[clamp(1.7rem,3.6vw,2.7rem)] text-white" data-reveal>Тарифы <span class="grad-text">клуба</span></h2>
+    <p class="mt-3 text-nx-mut max-w-2xl text-[15px]" data-reveal>Плати только за время. Пакет от 5 часов — минус 10%, ночная смена 00:00–08:00 — минус 30%. Скидки суммируются.</p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-6 items-stretch">
+      <!-- Standard -->
+      <article class="tariff-card glass rounded-2xl p-7 flex flex-col relative" style="--tc:#06B6D4" data-reveal>
+        <div class="font-mono text-[10px] tracking-[.3em] text-nx-cyn2">STANDARD ZONE</div>
+        <div class="mt-3 flex items-baseline gap-2">
+          <span class="font-orbit font-extrabold text-[2.5rem] text-white" style="text-shadow:0 0 24px rgba(6,182,212,.5)">150</span>
+          <span class="text-nx-mut font-mono text-sm">₽/час</span>
+        </div>
+        <p class="mt-2 text-[13.5px] text-nx-mut">Общий зал на 36 станций — идеально для каток с друзьями.</p>
+        <div class="sect-line my-5"></div>
+        <ul class="space-y-3 text-[13.5px] text-nx-ink/90">
+          <li class="flex gap-2.5"><svg class="text-nx-cyn2 flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>RTX 5070 Ti · Ryzen 7 9800X3D</li>
+          <li class="flex gap-2.5"><svg class="text-nx-cyn2 flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>Мониторы 360 Гц · 0.5 мс</li>
+          <li class="flex gap-2.5"><svg class="text-nx-cyn2 flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>Wooting 60HE + G Pro X Superlight 2</li>
+          <li class="flex gap-2.5"><svg class="text-nx-cyn2 flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>Пакет от 5 часов: <b class="text-nx-lime">−10%</b></li>
+          <li class="flex gap-2.5"><svg class="text-nx-cyn2 flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>Ночной пакет: <b class="text-nx-lime">−30%</b></li>
+        </ul>
+        <div class="mt-5 chip !border-nx-cyn/40 text-nx-cyn2 self-start">🌙 Ночь 00–08 · <span data-night="standard">720</span> ₽</div>
+        <button type="button" data-book data-zone="standard" class="btn-line rounded-xl h-12 mt-6 text-sm tracking-wide w-full" style="--tc:#06B6D4">Забронировать Standard</button>
+      </article>
+
+      <!-- Pro -->
+      <div class="grad-border relative md:-my-3" data-reveal style="transition-delay:.1s;box-shadow:0 0 60px -18px rgba(139,92,246,.6)">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 z-10 font-orbit font-bold text-[10px] tracking-[.2em] px-4 py-1.5 rounded-full text-nx-bg bg-gradient-to-r from-nx-vio to-nx-cyn" style="box-shadow:0 0 18px rgba(139,92,246,.8)">ВЫБОР КЛУБА</span>
+        <article class="tariff-card rounded-[16.5px] bg-nx-panel p-7 flex flex-col h-full relative" style="--tc:#8B5CF6">
+          <div class="font-mono text-[10px] tracking-[.3em] text-nx-vio2">PRO ARENA</div>
+          <div class="mt-3 flex items-baseline gap-2">
+            <span class="font-orbit font-extrabold text-[2.5rem] grad-text">250</span>
+            <span class="text-nx-mut font-mono text-sm">₽/час</span>
+          </div>
+          <p class="mt-2 text-[13.5px] text-nx-mut">Соревновательная сцена: 540 Гц и железо уровня тир-1.</p>
+          <div class="sect-line my-5"></div>
+          <ul class="space-y-3 text-[13.5px] text-nx-ink/90">
+            <li class="flex gap-2.5"><svg class="text-nx-vio2 flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><b>RTX 5090 32 ГБ</b>&nbsp;· Ryzen 9 9950X3D</li>
+            <li class="flex gap-2.5"><svg class="text-nx-vio2 flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><b>540 Гц</b>&nbsp;Fast-TN · 0.2 мс</li>
+            <li class="flex gap-2.5"><svg class="text-nx-vio2 flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>Wooting 80HE 8000 Гц + Viper V3 Pro</li>
+            <li class="flex gap-2.5"><svg class="text-nx-vio2 flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>Разбор демок с тренером</li>
+            <li class="flex gap-2.5"><svg class="text-nx-vio2 flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>Пакет 5+ ч: <b class="text-nx-lime">−10%</b> · ночь: <b class="text-nx-lime">−30%</b></li>
+          </ul>
+          <div class="mt-5 chip !border-nx-vio/50 text-nx-vio2 self-start">🌙 Ночь 00–08 · <span data-night="pro">1 200</span> ₽</div>
+          <button type="button" data-book data-zone="pro" class="btn-primary cut-sm h-12 mt-6 text-sm tracking-wide w-full">Забронировать Pro ⚡</button>
+        </article>
+      </div>
+
+      <!-- VIP -->
+      <article class="tariff-card glass rounded-2xl p-7 flex flex-col relative" style="--tc:#E879F9" data-reveal>
+        <div class="font-mono text-[10px] tracking-[.3em] text-nx-mag">VIP BOOTCAMP</div>
+        <div class="mt-3 flex items-baseline gap-2">
+          <span class="font-orbit font-extrabold text-[2.5rem] text-white" style="text-shadow:0 0 24px rgba(232,121,249,.5)">450</span>
+          <span class="text-nx-mut font-mono text-sm">₽/час · место</span>
+        </div>
+        <p class="mt-2 text-[13.5px] text-nx-mut">4 приватных буткемпа по 5 ПК — только твоя команда.</p>
+        <div class="sect-line my-5"></div>
+        <ul class="space-y-3 text-[13.5px] text-nx-ink/90">
+          <li class="flex gap-2.5"><svg class="text-nx-mag flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>RTX 5090 ×5 · Core Ultra 9 285K</li>
+          <li class="flex gap-2.5"><svg class="text-nx-mag flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>27″ OLED 480 Гц · 0.03 мс</li>
+          <li class="flex gap-2.5"><svg class="text-nx-mag flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>Стрим-сетап: свет, камера, микшер</li>
+          <li class="flex gap-2.5"><svg class="text-nx-mag flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>Мини-бар, лаунж и персональный админ</li>
+          <li class="flex gap-2.5"><svg class="text-nx-mag flex-none mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>Пакет 5+ ч: <b class="text-nx-lime">−10%</b> · ночь: <b class="text-nx-lime">−30%</b></li>
+        </ul>
+        <div class="mt-5 chip !border-nx-mag/40 text-nx-mag self-start">🌙 Ночь 00–08 · <span data-night="vip">2 160</span> ₽/место</div>
+        <button type="button" data-book data-zone="vip" class="btn-line rounded-xl h-12 mt-6 text-sm tracking-wide w-full" style="--tc:#E879F9">Забронировать VIP</button>
+      </article>
+    </div>
+
+    <p class="mt-8 text-center font-mono text-[11.5px] text-nx-mut" data-reveal>🌙 ночной пакет — старт с 00:00 до 08:00 · энергетик + снеки — 250 ₽ на игрока · отмена брони бесплатно за 2 часа</p>
+  </div>
+</section>
+
+<!-- ============ КАЛЬКУЛЯТОР ============ -->
+<section id="calculator" class="relative py-20 lg:py-28 scroll-mt-24 overflow-hidden">
+  <div class="ghost ghost-cyn -left-[4%] bottom-0" data-speed="0.13" aria-hidden="true">CONFIG</div>
+  <div class="glow-blob w-[460px] h-[460px] top-1/4 -right-40" style="background:rgba(6,182,212,.12)" aria-hidden="true"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+    <div class="flex items-center gap-4 font-mono text-[11px] tracking-[.35em] text-nx-cyn2" data-reveal>
+      <span>03 // КОНФИГУРАТОР</span><span class="sect-line flex-1"></span><span class="text-nx-mut hidden sm:block">ПЕРЕСЧЁТ В РЕАЛЬНОМ ВРЕМЕНИ</span>
+    </div>
+    <h2 class="mt-4 font-display uppercase text-[clamp(1.7rem,3.6vw,2.7rem)] text-white" data-reveal>Калькулятор <span class="grad-text">бронирования</span></h2>
+    <p class="mt-3 text-nx-mut max-w-2xl text-[15px]" data-reveal>Собери пакет под свою катку — цена пересчитывается мгновенно, прямо как FPS на наших машинах.</p>
+
+    <div class="mt-10 glass rounded-2xl p-6 md:p-10 relative grid lg:grid-cols-[1.1fr_.9fr] gap-10" data-reveal>
+      <i class="crn crn-tl"></i><i class="crn crn-tr"></i><i class="crn crn-bl"></i><i class="crn crn-br"></i>
+
+      <!-- контролы -->
+      <div class="space-y-8">
+        <div>
+          <div class="flex items-center justify-between">
+            <label class="font-mono text-[10.5px] tracking-[.3em] text-nx-mut uppercase">▸ Выбери зону</label>
+            <span id="night-badge" class="hidden chip !border-nx-vio/50 text-nx-vio2 !py-1">🌙 00:00–08:00</span>
+          </div>
+          <div class="mt-3 grid grid-cols-3 gap-2 sm:gap-3">
+            <button type="button" class="cz-btn rounded-xl px-3 py-3.5 text-left" data-czone="standard" aria-pressed="false">
+              <span class="flex items-center gap-2 font-orbit font-bold text-[11px] sm:text-xs"><span class="cz-dot w-2 h-2 rounded-full flex-none" style="background:#06B6D4;color:#06B6D4"></span>STANDARD</span>
+              <span class="block font-mono text-[10.5px] mt-1 opacity-75">150 ₽/ч</span>
+            </button>
+            <button type="button" class="cz-btn rounded-xl px-3 py-3.5 text-left" data-czone="pro" aria-pressed="false">
+              <span class="flex items-center gap-2 font-orbit font-bold text-[11px] sm:text-xs"><span class="cz-dot w-2 h-2 rounded-full flex-none" style="background:#8B5CF6;color:#8B5CF6"></span>PRO</span>
+              <span class="block font-mono text-[10.5px] mt-1 opacity-75">250 ₽/ч</span>
+            </button>
+            <button type="button" class="cz-btn rounded-xl px-3 py-3.5 text-left" data-czone="vip" aria-pressed="false">
+              <span class="flex items-center gap-2 font-orbit font-bold text-[11px] sm:text-xs"><span class="cz-dot w-2 h-2 rounded-full flex-none" style="background:#E879F9;color:#E879F9"></span>VIP</span>
+              <span class="block font-mono text-[10.5px] mt-1 opacity-75">450 ₽/ч</span>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-end justify-between">
+            <label for="hoursRange" class="font-mono text-[10.5px] tracking-[.3em] text-nx-mut uppercase">▸ Сколько играем</label>
+            <div class="font-orbit font-extrabold text-2xl text-white leading-none"><span id="hours-out">5</span> <span id="hours-word" class="text-sm text-nx-mut font-body font-medium">часов</span></div>
+          </div>
+          <input id="hoursRange" type="range" min="1" max="12" step="1" value="5" class="mt-3" aria-label="Количество часов, от 1 до 12">
+          <div class="flex justify-between font-mono text-[9.5px] text-nx-mut px-0.5 mt-1" aria-hidden="true">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span class="text-nx-vio2 font-bold">5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+          </div>
+          <p class="mt-2 font-mono text-[10.5px] text-nx-vio2">⚡ от 5 часов — пакетная скидка −10% на всё время</p>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <label class="font-mono text-[10.5px] tracking-[.3em] text-nx-mut uppercase">▸ Количество ПК</label>
+            <p id="pcs-hint" class="font-mono text-[10px] text-nx-mut mt-1.5">до 8 ПК в брони</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <button id="pcs-minus" type="button" class="step-btn" aria-label="Меньше ПК"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+            <span id="pcs-out" class="font-orbit font-extrabold text-2xl text-white w-9 text-center">2</span>
+            <button id="pcs-plus" type="button" class="step-btn" aria-label="Больше ПК"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <label class="font-mono text-[10.5px] tracking-[.3em] text-nx-mut uppercase block">▸ Доп. опции</label>
+          <label id="opt-snacks" class="opt">
+            <input id="in-snacks" type="checkbox" class="sr-only">
+            <span class="opt-switch"></span>
+            <span class="flex-1">
+              <span class="block font-semibold text-[14px] text-white">⚡ Энергетик + снеки</span>
+              <span class="block font-mono text-[10.5px] text-nx-mut mt-0.5">заряд на всю сессию, подаём к столу</span>
+            </span>
+            <span class="font-orbit font-bold text-sm text-nx-cyn2 whitespace-nowrap">+250 ₽<span class="font-mono text-[9px] text-nx-mut">/ПК</span></span>
+          </label>
+          <label id="opt-night" class="opt">
+            <input id="in-night" type="checkbox" class="sr-only">
+            <span class="opt-switch"></span>
+            <span class="flex-1">
+              <span class="block font-semibold text-[14px] text-white">🌙 Ночной пакет</span>
+              <span class="block font-mono text-[10.5px] text-nx-mut mt-0.5">старт с 00:00 до 08:00 · клуб твой</span>
+            </span>
+            <span class="font-orbit font-bold text-sm text-nx-lime whitespace-nowrap">−30%</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- чек -->
+      <div class="rounded-2xl border border-nx-vio/25 bg-nx-bg/70 p-6 flex flex-col relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-nx-vio via-nx-cyn to-nx-mag"></div>
+        <div class="flex items-center justify-between font-mono text-[10.5px] tracking-[.25em]">
+          <span class="text-nx-cyn2">// ЧЕК NEXUS</span>
+          <span id="rc-zone" class="text-nx-mut">PRO ARENA</span>
+        </div>
+        <div id="rc-lines" class="mt-4"></div>
+        <div class="mt-auto pt-6">
+          <div id="rc-save" class="hidden mb-3 chip !border-nx-lime/50 text-nx-lime" style="box-shadow:0 0 16px -6px #A3E635">Выгода 250 ₽</div>
+          <div class="flex items-end justify-between gap-4">
+            <span class="font-mono text-[11px] tracking-[.3em] text-nx-mut uppercase pb-2">Итого</span>
+            <div id="rc-total-wrap" class="text-right">
+              <span id="rc-total" class="font-orbit font-extrabold text-[2.7rem] leading-none grad-text">2 250</span>
+              <span class="font-orbit text-xl text-nx-mut ml-1">₽</span>
+            </div>
+          </div>
+          <div id="rc-eff" class="text-right font-mono text-[10.5px] text-nx-mut mt-1.5">≈ 450 ₽/час за весь пакет</div>
+          <button type="button" data-book class="btn-primary cut h-13 w-full py-4 mt-5 text-[15px] tracking-wide">
+            Забронировать этот пакет
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="mt-3 text-center font-mono text-[10px] text-nx-mut">оплата на месте · отмена бесплатно за 2 часа</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ТУРНИРЫ ============ -->
+<section id="tournaments" class="relative py-20 lg:py-28 scroll-mt-24 overflow-hidden">
+  <div class="ghost -right-[2%] -top-4" data-speed="0.11" aria-hidden="true">ESPORTS</div>
+  <div class="glow-blob w-[440px] h-[440px] bottom-0 -left-40" style="background:rgba(232,121,249,.09)" aria-hidden="true"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+    <div class="flex items-center gap-4 font-mono text-[11px] tracking-[.35em] text-nx-mag" data-reveal>
+      <span>04 // КИБЕРСПОРТ</span><span class="sect-line flex-1"></span><span class="text-nx-mut hidden sm:block">ПРИЗОВЫЕ · КАЖДЫЙ МЕСЯЦ</span>
+    </div>
+    <h2 class="mt-4 font-display uppercase text-[clamp(1.7rem,3.6vw,2.7rem)] text-white" data-reveal>Ближайшие <span class="grad-text">турниры</span></h2>
+    <p class="mt-3 text-nx-mut max-w-2xl text-[15px]" data-reveal>Собирай команду и забирай призовые. Слоты ограничены — регистрация закрывается, когда сетка заполнена.</p>
+    <div id="tn-grid" class="mt-10 grid md:grid-cols-3 gap-6 items-stretch"></div>
+  </div>
+</section>
+
+<!-- ============ CTA-ПОЛОСА ============ -->
+<section class="relative pb-20 lg:pb-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grad-border" data-reveal style="box-shadow:0 0 70px -20px rgba(139,92,246,.55)">
+      <div class="bg-nx-panel px-7 py-9 md:px-12 md:py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-7 relative overflow-hidden">
+        <div class="glow-blob w-72 h-72 -top-24 -right-16" style="background:rgba(6,182,212,.15)" aria-hidden="true"></div>
+        <div class="relative">
+          <div class="font-mono text-[10.5px] tracking-[.35em] text-nx-lime mb-3">▲ ГАРАНТИЯ NEXUS</div>
+          <h3 class="font-display uppercase text-[clamp(1.4rem,3vw,2.2rem)] text-white leading-tight">Лагнёт — <span class="grad-text">час за наш счёт</span></h3>
+          <p class="mt-3 text-nx-mut text-[14.5px] max-w-xl">Пинг выше 15 мс или просадка FPS по вине клуба? Админ добавит час бесплатно. За 5 лет — 11 случаев. Мы считаем.</p>
+        </div>
+        <button type="button" data-book class="btn-primary cut h-14 px-9 text-[15px] tracking-wide flex-none relative">
+          Забронировать ПК
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ ПОДВАЛ / КОНТАКТЫ ============ -->
+<footer id="contacts" class="relative border-t border-nx-vio/15 bg-nx-deep/80 overflow-hidden scroll-mt-24">
+  <div class="ghost left-1/2 -translate-x-1/2 -bottom-10 opacity-70" data-speed="0.06" aria-hidden="true">NEXUS</div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 relative">
+    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.1fr_1fr]">
+      <div>
+        <a href="#top" class="flex items-center gap-3">
+          <svg width="40" height="40" viewBox="0 0 32 32" style="filter:drop-shadow(0 0 10px rgba(139,92,246,.8))"><path d="M16 2l12 7v14l-12 7-12-7V9z" fill="rgba(139,92,246,.1)" stroke="#8B5CF6" stroke-width="1.8"/><path d="M11 21V11l10 10V11" stroke="#06B6D4" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="leading-none">
+            <span class="block font-orbit font-extrabold text-lg tracking-[.18em] text-white" style="text-shadow:0 0 18px rgba(139,92,246,.9)">NEXUS</span>
+            <span class="block font-mono text-[8.5px] tracking-[.42em] text-nx-cyn2 mt-1">CYBER&nbsp;ARENA</span>
+          </span>
+        </a>
+        <p class="mt-5 text-nx-mut text-[13.5px] leading-relaxed max-w-xs">Киберспортивный клуб премиум-класса. 80 станций, 3 зоны, турниры каждую неделю и лучшая атмосфера в городе — с 2021 года.</p>
+        <div class="mt-6 flex gap-3">
+          <a class="soc-btn" style="--sc:#67E8F9" href="https://t.me/nexusarena" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></a>
+          <a class="soc-btn" style="--sc:#A78BFA" href="https://vk.com/nexusarena" target="_blank" rel="noopener" aria-label="ВКонтакте" title="ВКонтакте"><span class="font-orbit font-extrabold text-[12px]">VK</span></a>
+          <a class="soc-btn" style="--sc:#8B5CF6" href="https://discord.gg/nexusarena" target="_blank" rel="noopener" aria-label="Discord" title="Discord"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="7" width="20" height="11" rx="5.5"/><path d="M7.5 10.5v4M5.5 12.5h4"/><circle cx="15.5" cy="11" r="1.1" fill="currentColor" stroke="none"/><circle cx="18" cy="14" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a class="soc-btn" style="--sc:#E879F9" href="https://twitch.tv/nexusarena" target="_blank" rel="noopener" aria-label="Twitch" title="Twitch"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16v10l-4 4h-4l-3 3H7v-3H4V3z"/><path d="M11 7v4M16 7v4"/></svg></a>
+          <a class="soc-btn" style="--sc:#F43F5E" href="https://youtube.com/@nexusarena" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3.5"/><path d="M10 9.5l5 2.5-5 2.5v-5z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+
+      <nav aria-label="Навигация в подвале">
+        <h4 class="font-mono text-[10.5px] tracking-[.35em] text-nx-cyn2 uppercase">Навигация</h4>
+        <ul class="mt-5 space-y-3 text-[13.5px]">
+          <li><a class="text-nx-mut hover:text-nx-cyn2 transition-colors" href="#zones">Зоны и железо</a></li>
+          <li><a class="text-nx-mut hover:text-nx-cyn2 transition-colors" href="#tariffs">Тарифы</a></li>
+          <li><a class="text-nx-mut hover:text-nx-cyn2 transition-colors" href="#calculator">Калькулятор</a></li>
+          <li><a class="text-nx-mut hover:text-nx-cyn2 transition-colors" href="#tournaments">Турниры</a></li>
+          <li><button type="button" data-book class="text-nx-vio2 hover:text-white transition-colors font-semibold">Забронировать ПК →</button></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h4 class="font-mono text-[10.5px] tracking-[.35em] text-nx-cyn2 uppercase">Контакты</h4>
+        <ul class="mt-5 space-y-4 text-[13.5px] text-nx-mut">
+          <li class="flex gap-3">
+            <svg class="text-nx-vio2 flex-none mt-0.5" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>Москва, Ленинградский пр-т, 39с1<br><span class="chip mt-2 !py-1 !px-2.5 !text-[10px]">Ⓜ Динамо · 4 мин пешком</span></span>
+          </li>
+          <li class="flex gap-3 items-center">
+            <svg class="text-nx-vio2 flex-none" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 3h4l1.5 5L8 10a12 12 0 0 0 6 6l2-2.5 5 1.5v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+            <a class="hover:text-nx-cyn2 transition-colors font-semibold text-nx-ink" href="tel:+74951234567">+7 (495) 123-45-67</a>
+          </li>
+          <li class="flex gap-3 items-center">
+            <svg class="text-nx-vio2 flex-none" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 7l10 7L22 7"/></svg>
+            <a class="hover:text-nx-cyn2 transition-colors" href="mailto:play@nexusarena.gg">play@nexusarena.gg</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-mono text-[10.5px] tracking-[.35em] text-nx-cyn2 uppercase">Режим работы</h4>
+        <div class="mt-5 font-orbit font-extrabold text-[2.6rem] grad-text leading-none">24/7</div>
+        <div class="mt-3 flex items-center gap-2 font-mono text-[11px] text-nx-lime">
+          <span class="w-2 h-2 rounded-full bg-nx-lime pulse-soft" style="box-shadow:0 0 10px #A3E635"></span>
+          ОТКРЫТО — ЗАХОДИ
+        </div>
+        <p class="mt-4 text-[12.5px] text-nx-mut leading-relaxed">Без выходных и праздников. Ночная смена 00:00–08:00 — со скидкой 30%.</p>
+      </div>
+    </div>
+
+    <div class="sect-line mt-14"></div>
+    <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[10.5px] text-nx-mut">
+      <span>© <span id="year">2026</span> NEXUS CYBER ARENA · Все права защищены</span>
+      <span class="flex items-center gap-4"><span class="chip !py-1 !text-[10px]">18+ · играй ответственно</span><span class="text-nx-vio2">сделано на максималках ⚡</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ МОДАЛКА: БРОНЬ ============ -->
+<div id="bookModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="bm-title" aria-hidden="true">
+  <div class="modal-card glass-strong rounded-2xl w-full max-w-lg p-6 sm:p-8 relative">
+    <i class="crn crn-tl"></i><i class="crn crn-tr"></i><i class="crn crn-bl"></i><i class="crn crn-br"></i>
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <div class="font-mono text-[10px] tracking-[.35em] text-nx-cyn2">// БРОНИРОВАНИЕ</div>
+        <h3 id="bm-title" class="font-display uppercase text-2xl text-white mt-1.5">Занять место</h3>
+      </div>
+      <button type="button" data-close class="text-nx-mut hover:text-white transition-colors p-1.5" aria-label="Закрыть">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+
+    <div class="mt-5 rounded-xl border border-white/10 bg-white/[.03] p-4">
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <span id="bm-zone" class="font-orbit font-bold text-[13px] tracking-wider px-3 py-1.5 rounded-lg border">PRO ARENA</span>
+        <span id="bm-free" class="font-mono text-[10.5px] text-nx-lime">9 мест свободно</span>
+      </div>
+      <div id="bm-pack" class="font-mono text-[11.5px] text-nx-mut mt-3">5 часов × 2 ПК · 250 ₽/час</div>
+      <div id="bm-extras" class="flex flex-wrap gap-2 mt-3"></div>
+      <div class="flex items-end justify-between mt-4 pt-3 border-t border-dashed border-white/10">
+        <button type="button" id="bm-edit" class="font-mono text-[11px] text-nx-cyn2 hover:text-white transition-colors underline underline-offset-4 decoration-nx-cyn/40">← изменить пакет</button>
+        <div class="text-right">
+          <span class="font-mono text-[9.5px] tracking-[.25em] text-nx-mut block mb-1">ИТОГО</span>
+          <span id="bm-total" class="font-orbit font-extrabold text-3xl grad-text leading-none">2 250</span><span class="font-orbit text-lg text-nx-mut ml-1">₽</span>
+        </div>
+      </div>
+    </div>
+
+    <form id="bookForm" class="mt-5 space-y-4" novalidate>
+      <div>
+        <label for="bk-nick" class="font-mono text-[10px] tracking-[.25em] text-nx-mut uppercase block mb-1.5">Никнейм</label>
+        <input id="bk-nick" class="field" type="text" placeholder="например, s1mple" autocomplete="nickname" maxlength="24">
+        <p id="err-nick" class="hidden text-nx-rose text-[11px] mt-1.5 font-mono"></p>
+      </div>
+      <div>
+        <label for="bk-phone" class="font-mono text-[10px] tracking-[.25em] text-nx-mut uppercase block mb-1.5">Телефон</label>
+        <input id="bk-phone" class="field" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel">
+        <p id="err-phone" class="hidden text-nx-rose text-[11px] mt-1.5 font-mono"></p>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label for="bk-date" class="font-mono text-[10px] tracking-[.25em] text-nx-mut uppercase block mb-1.5">Дата</label>
+          <input id="bk-date" class="field" type="date">
+        </div>
+        <div>
+          <label for="bk-time" class="font-mono text-[10px] tracking-[.25em] text-nx-mut uppercase block mb-1.5">Время</label>
+          <select id="bk-time" class="field"></select>
+        </div>
+      </div>
+      <p id="err-date" class="hidden text-nx-rose text-[11px] font-mono -mt-1"></p>
+      <button id="bk-submit" type="submit" class="btn-primary cut h-13 w-full py-4 text-[15px] tracking-wide">
+        <span class="btn-label">Подтвердить бронь</span>
+        <span class="btn-spin spin hidden"></span>
+      </button>
+      <p class="text-center font-mono text-[10px] text-nx-mut">подтверждение придёт в SMS за 2 минуты · оплата в клубе</p>
+    </form>
+  </div>
+</div>
+
+<!-- ============ МОДАЛКА: ТУРНИР ============ -->
+<div id="teamModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="tm-title" aria-hidden="true">
+  <div class="modal-card glass-strong rounded-2xl w-full max-w-md p-6 sm:p-8 relative">
+    <i class="crn crn-tl"></i><i class="crn crn-tr"></i><i class="crn crn-bl"></i><i class="crn crn-br"></i>
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <div class="font-mono text-[10px] tracking-[.35em] text-nx-mag">// РЕГИСТРАЦИЯ КОМАНДЫ</div>
+        <h3 id="tm-title" class="font-display uppercase text-xl text-white mt-1.5">NEXUS CUP #7</h3>
+      </div>
+      <button type="button" data-close class="text-nx-mut hover:text-white transition-colors p-1.5" aria-label="Закрыть">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+    <div id="tm-chips" class="flex flex-wrap gap-2 mt-4"></div>
+    <form id="teamForm" class="mt-5 space-y-4" novalidate>
+      <div>
+        <label for="tt-name" class="font-mono text-[10px] tracking-[.25em] text-nx-mut uppercase block mb-1.5">Название команды</label>
+        <input id="tt-name" class="field" type="text" placeholder="например, NIGHT RAID" maxlength="28">
+        <p id="err-team" class="hidden text-nx-rose text-[11px] mt-1.5 font-mono"></p>
+      </div>
+      <div>
+        <label for="tt-phone" class="font-mono text-[10px] tracking-[.25em] text-nx-mut uppercase block mb-1.5">Телефон капитана</label>
+        <input id="tt-phone" class="field" type="tel" placeholder="+7 (___) ___-__-__" inputmode="tel">
+        <p id="err-tphone" class="hidden text-nx-rose text-[11px] mt-1.5 font-mono"></p>
+      </div>
+      <button id="tt-submit" type="submit" class="btn-primary cut h-13 w-full py-4 text-[15px] tracking-wide">
+        <span class="btn-label">Отправить заявку</span>
+        <span class="btn-spin spin hidden"></span>
+      </button>
+      <p class="text-center font-mono text-[10px] text-nx-mut">взнос оплачивается в клубе в день турнира</p>
+    </form>
+  </div>
+</div>
+
+<div id="toasts" aria-live="polite"></div>
+
+<button id="backTop" type="button" class="glass" aria-label="Наверх">
+  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14l6-6 6 6"/></svg>
+</button>
+
+<script>
+(function(){
+'use strict';
+document.documentElement.classList.add('js');
+const $  = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fmt = n => Math.round(n).toLocaleString('ru-RU');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const plural = (n,f) => { const m=n%100; if(m>=11&&m<=14) return f[2]; const k=n%10; return k===1?f[0]:(k>=2&&k<=4?f[1]:f[2]); };
+const HOURS_W = ['час','часа','часов'];
+
+/* ================= ДАННЫЕ ================= */
+const ZONES = {
+  standard: {
+    key:'standard', name:'STANDARD ZONE', color:'#06B6D4', rate:150, seats:36, free:14, unit:'мест',
+    tag:'Общий зал · 36 станций',
+    desc:'Холодный неон, быстрый коннект и место для всего сквада. Идеально для вечерних каток, первых тренировок и знакомства с клубом — железо уже уровня домашних «топ-сборок».',
+    gpu:'GeForce RTX 5070 Ti 16 ГБ', cpu:'AMD Ryzen 7 9800X3D', monitor:'27″ IPS · 360 Гц · 0.5 мс',
+    gear:'Logitech G Pro X Superlight 2', gearSub:'клавиатура Wooting 60HE · Rapid Trigger',
+    headset:'HyperX Cloud III',
+    perks:['Канал 10 Гбит/с','Кресла Drift Pro','Бар и чилл-зона рядом','Тимспик на 5 мест']
+  },
+  pro: {
+    key:'pro', name:'PRO ARENA', color:'#8B5CF6', rate:250, seats:24, free:9, unit:'мест',
+    tag:'Сцена клуба · 24 станции',
+    desc:'Соревновательная зона уровня тир-1: RTX 5090, мониторы 540 Гц и периферия киберспортсменов. Здесь проходят клубные турниры и разбираются демки — играй там, где играют профи.',
+    gpu:'GeForce RTX 5090 32 ГБ', cpu:'AMD Ryzen 9 9950X3D', monitor:'24.5″ Fast-TN · 540 Гц · 0.2 мс',
+    gear:'Razer Viper V3 Pro', gearSub:'клавиатура Wooting 80HE · 8000 Гц',
+    headset:'HyperX Cloud III Wireless',
+    perks:['Сцена и LED-экран 6×3 м','Разбор демок с тренером','Приоритет на турниры','Отдельная тим-комната']
+  },
+  vip: {
+    key:'vip', name:'VIP BOOTCAMP', color:'#E879F9', rate:450, seats:4, free:2, unit:'комнат',
+    tag:'4 приватных буткемпа · по 5 ПК',
+    desc:'Закрытая комната только для твоей команды: пять машин на RTX 5090, стрим-сетап, мини-бар и персональный админ. Формат настоящих буткемпов — готовьтесь к мейджору, не отвлекаясь ни на что.',
+    gpu:'RTX 5090 32 ГБ × 5 станций', cpu:'Intel Core Ultra 9 285K', monitor:'27″ OLED · 480 Гц · 0.03 мс',
+    gear:'Razer Viper V3 Pro White', gearSub:'клавиатура Wooting 80HE LTD',
+    headset:'Astro A50 X + стрим-микшер',
+    perks:['Комната только для команды','Стрим: свет, камера, микшер','Мини-бар, лаунж и PS5 Pro','Персональный админ и тренер']
+  }
+};
+
+const TOURNEYS = [
+  { id:'cs2', game:'CS2', title:'NEXUS CUP #7', color:'#FBBF24', start:'2026-12-12', dateFull:'12–13 декабря 2026',
+    prize:150000, slots:16, taken:12, fee:'2 500 ₽ / команда', format:'5v5 · Double Elim · BO3 финал', joined:false,
+    icon:'<circle cx="12" cy="12" r="7"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/>' },
+  { id:'val', game:'VALORANT', title:'NEON STRIKE', color:'#F43F5E', start:'2026-12-20', dateFull:'20 декабря 2026',
+    prize:100000, slots:12, taken:7, fee:'2 000 ₽ / команда', format:'5v5 · Single Elim · BO3', joined:false,
+    icon:'<path d="M3 5l8.5 14h4L7 5H3z" fill="currentColor" stroke="none"/><path d="M21 5l-5.5 9-2-3.3L17.5 5H21z" fill="currentColor" stroke="none"/>' },
+  { id:'dota', game:'DOTA 2', title:'NIGHT LEAGUE', color:'#8B5CF6', start:'2027-01-09', dateFull:'9–10 января 2027',
+    prize:200000, slots:8, taken:5, fee:'3 000 ₽ / команда', format:'5v5 · Группы + Play-off · BO3', joined:false,
+    icon:'<rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M8 16.5L16 7.5"/><path d="M6.5 6.5l3.2 1.4-1.8 1.8z" fill="currentColor" stroke="none"/><path d="M17.5 17.5l-3.2-1.4 1.8-1.8z" fill="currentColor" stroke="none"/>' }
+];
+
+const state = { zone:'pro', hours:5, pcs:2, snacks:false, night:false };
+const maxPcs = () => state.zone==='vip' ? 5 : 8;
+
+/* ================= ЧИСЛА / ЦЕНА ================= */
+function tween(el, to, instant){
+  if(!el) return;
+  if(el._raf) cancelAnimationFrame(el._raf);
+  const from = (el._v==null) ? to : el._v;
+  if(instant || RM || from===to){ el._v=to; el.textContent=fmt(to); return; }
+  const t0 = performance.now(), dur = 340;
+  const step = t => {
+    const p = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-p,3);
+    el._v = from+(to-from)*e;
+    el.textContent = fmt(el._v);
+    if(p<1) el._raf = requestAnimationFrame(step); else { el._v=to; el._raf=null; }
+  };
+  el._raf = requestAnimationFrame(step);
+}
+
+function calcState(){
+  const z = ZONES[state.zone];
+  const base   = z.rate*state.hours*state.pcs;
+  const pack   = state.hours>=5 ? Math.round(base*.10) : 0;
+  const night  = state.night ? Math.round(base*.30) : 0;
+  const snacks = state.snacks ? 250*state.pcs : 0;
+  return { base, pack, night, snacks, total:base-pack-night+snacks, save:pack+night, rate:z.rate };
+}
+
+let lastTotal = null;
+function renderCalc(){
+  const c = calcState(), z = ZONES[state.zone];
+  $$('[data-czone]').forEach(b=>{
+    const on = b.dataset.czone===state.zone;
+    b.classList.toggle('cz-on',on); b.setAttribute('aria-pressed',on);
+  });
+  const slider = $('#hoursRange');
+  slider.value = state.hours;
+  slider.style.setProperty('--fill', ((state.hours-1)/11*100)+'%');
+  $('#hours-out').textContent = state.hours;
+  $('#hours-word').textContent = plural(state.hours,HOURS_W);
+  $('#pcs-out').textContent = state.pcs;
+  $('#pcs-minus').disabled = state.pcs<=1;
+  $('#pcs-plus').disabled  = state.pcs>=maxPcs();
+  $('#pcs-hint').textContent = state.zone==='vip' ? 'до 5 ПК в буткемпе' : 'до 8 ПК в брони';
+  $('#in-snacks').checked = state.snacks;
+  $('#in-night').checked  = state.night;
+  $('#opt-snacks').classList.toggle('opt-on',state.snacks);
+  $('#opt-night').classList.toggle('opt-on',state.night);
+  $('#night-badge').classList.toggle('hidden',!state.night);
+  $('#rc-zone').textContent = z.name;
+
+  const row = (l,v,cls) => '<div class="rc-row"><span>'+l+'</span><b class="'+(cls||'')+'">'+v+'</b></div>';
+  let html = row(state.hours+' '+plural(state.hours,HOURS_W)+' × '+fmt(z.rate)+' ₽ × '+state.pcs+' ПК', fmt(c.base)+' ₽');
+  if(c.pack)   html += row('Пакет 5+ часов · −10%','−'+fmt(c.pack)+' ₽','neg');
+  if(c.night)  html += row('Ночной пакет · −30%','−'+fmt(c.night)+' ₽','neg');
+  if(c.snacks) html += row('Энергетик + снеки × '+state.pcs,'+'+fmt(c.snacks)+' ₽','pos');
+  $('#rc-lines').innerHTML = html;
+
+  tween($('#rc-total'), c.total);
+  $('#rc-eff').textContent = '≈ '+fmt(c.total/state.hours)+' ₽/час за весь пакет';
+  const save = $('#rc-save');
+  save.classList.toggle('hidden', c.save<=0);
+  save.textContent = 'Выгода '+fmt(c.save)+' ₽';
+  if(lastTotal!==null && lastTotal!==c.total){
+    const w = $('#rc-total-wrap');
+    w.classList.remove('flash'); void w.offsetWidth; w.classList.add('flash');
+  }
+  lastTotal = c.total;
+}
+
+/* ================= ЗОНЫ ================= */
+let swapT = null;
+function updateFree(z){
+  const lg = $('#lg-free-'+z.key); if(lg) lg.textContent = z.free;
+  if(state.zone===z.key){
+    $('#z-free').textContent = 'Свободно: '+z.free+' из '+z.seats+' '+z.unit;
+    const dot = $('#z-free-dot');
+    const good = z.unit==='комнат' ? z.free>=2 : z.free>=6;
+    const col = z.free===0 ? '#F43F5E' : (good ? '#A3E635' : '#FBBF24');
+    dot.style.background = col; dot.style.boxShadow = '0 0 8px '+col;
+  }
+}
+function fillZone(z, instant){
+  $('#z-name').textContent = z.name;
+  $('#z-tag').textContent  = z.tag;
+  $('#z-desc').textContent = z.desc;
+  $('#z-gpu').textContent  = z.gpu;
+  $('#z-cpu').textContent  = z.cpu;
+  $('#z-mon').textContent  = z.monitor;
+  $('#z-gear').textContent = z.gear;
+  $('#z-gear-sub').textContent = z.gearSub;
+  $('#z-emblem-letter').textContent = z.name[0];
+  $('#z-perks').innerHTML =
+    '<span class="chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="2"/><rect x="17" y="14" width="4" height="6" rx="2"/></svg>'+esc(z.headset)+'</span>' +
+    z.perks.map(p=>'<span class="chip">✦ '+esc(p)+'</span>').join('');
+  tween($('#z-rate'), z.rate, instant);
+  $('#z-book').dataset.zone = z.key;
+  updateFree(z);
+}
+function setMapActive(){
+  ['standard','pro','vip'].forEach(k=>{
+    const g = $('#mm-'+k); if(g) g.classList.toggle('on', k===state.zone);
+    $$('.lg-chip').forEach(ch=>ch.classList.toggle('on', ch.dataset.zone===state.zone));
+  });
+}
+function setZone(key, src){
+  if(!ZONES[key]) return;
+  const changed = state.zone!==key;
+  state.zone = key;
+  const z = ZONES[key];
+  document.documentElement.style.setProperty('--zone', z.color);
+  $$('.zone-tab').forEach(t=>{
+    const on = t.dataset.zone===key;
+    t.classList.toggle('on',on); t.setAttribute('aria-selected',on);
+  });
+  setMapActive();
+  if(state.pcs>maxPcs()) state.pcs = maxPcs();
+  const body = $('#zone-body');
+  if(src==='init' || RM || !changed){
+    clearTimeout(swapT); body.classList.remove('swapping'); fillZone(z, src==='init');
+  } else {
+    body.classList.add('swapping');
+    clearTimeout(swapT);
+    swapT = setTimeout(()=>{ fillZone(z,false); body.classList.remove('swapping'); },200);
+  }
+  renderCalc();
+}
+
+/* ---- схема: точки ---- */
+function renderMapDots(){
+  const zs = ZONES.standard;
+  let s = '';
+  for(let i=0;i<36;i++){
+    const cx = 44+(i%6)*46, cy = 172+Math.floor(i/6)*18;
+    s += '<circle cx="'+cx+'" cy="'+cy+'" r="3.2" fill="'+(i<zs.free?'currentColor':'#3A3A52')+'" opacity="'+(i<zs.free?'.95':'.7')+'"/>';
+  }
+  $('#mm-dots-standard').innerHTML = s;
+  const zp = ZONES.pro;
+  let p = '';
+  for(let i=0;i<24;i++){
+    const cx = 236+(i%12)*15.5, cy = i<12?62:94;
+    p += '<circle cx="'+cx+'" cy="'+cy+'" r="3" fill="'+(i<zp.free?'currentColor':'#3A3A52')+'" opacity="'+(i<zp.free?'.95':'.7')+'"/>';
+  }
+  $('#mm-dots-pro').innerHTML = p;
+  const zv = ZONES.vip;
+  let v = '';
+  for(let r=0;r<4;r++){
+    const x = 26+r*46, on = r<zv.free;
+    v += '<rect x="'+x+'" y="44" width="40" height="68" rx="6" fill="'+(on?'currentColor':'#20202E')+'" fill-opacity="'+(on?'.12':'.5')+'" stroke="currentColor" stroke-opacity="'+(on?'.8':'.2')+'" stroke-width="1.2"/>';
+    for(let j=0;j<5;j++) v += '<circle cx="'+(x+20)+'" cy="'+(56+j*11)+'" r="2.6" fill="'+(on?'currentColor':'#3A3A52')+'" opacity="'+(on?'.95':'.7')+'"/>';
+  }
+  $('#mm-vip-rooms').innerHTML = v;
+}
+
+/* ================= ТУРНИРЫ ================= */
+function renderTournaments(){
+  $('#tn-grid').innerHTML = TOURNEYS.map((t,i)=>{
+    const left = Math.max(0, Math.ceil((new Date(t.start+'T12:00:00') - Date.now())/864e5));
+    const pct  = Math.round(t.taken/t.slots*100);
+    return `
+    <article class="tn-card glass rounded-2xl p-6 relative overflow-hidden flex flex-col" style="--tc:${t.color}" data-reveal style="transition-delay:${i*0.1}s">
+      <div class="flex items-start justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="tn-ic w-11 h-11 rounded-xl flex items-center justify-center flex-none">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${t.icon}</svg>
+          </span>
+          <div>
+            <div class="font-orbit font-bold text-[13px] tracking-wider" style="color:${t.color}">${t.game}</div>
+            <h3 class="font-display text-[17px] text-white mt-0.5 uppercase">${t.title}</h3>
+          </div>
+        </div>
+        <span class="chip !py-1 !px-2.5 !text-[9.5px] whitespace-nowrap">через ${left} ${plural(left,['день','дня','дней'])}</span>
+      </div>
+      <div class="mt-5">
+        <div class="font-mono text-[9.5px] tracking-[.3em] text-nx-mut uppercase">Призовой фонд</div>
+        <div class="font-orbit font-extrabold text-[2rem] prize-grad leading-tight mt-1">${fmt(t.prize)} ₽</div>
+      </div>
+      <div class="mt-4 space-y-2.5 font-mono text-[11.5px] text-nx-mut">
+        <div class="flex items-center gap-2.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          ${t.dateFull}
+        </div>
+        <div class="flex items-center gap-2.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/></svg>
+          ${t.format}
+        </div>
+        <div class="flex items-center gap-2.5">
+          <span class="font-orbit font-bold text-[13px] w-[14px] text-center" style="color:${t.color}">₽</span>
+          Взнос: ${t.fee}
+        </div>
+      </div>
+      <div class="mt-5">
+        <div class="flex justify-between font-mono text-[10.5px] text-nx-mut mb-1.5">
+          <span class="flex items-center gap-1.5">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M17.5 13.6a6.5 6.5 0 0 1 4 6.4"/></svg>
+            команды
+          </span>
+          <span id="tn-count-${t.id}" class="text-nx-ink font-bold">${t.taken}/${t.slots}</span>
+        </div>
+        <div class="prog"><i id="tn-bar-${t.id}" style="width:${pct}%"></i></div>
+      </div>
+      <button type="button" data-team="${t.id}" class="btn-line rounded-xl h-12 w-full text-[13.5px] tracking-wide mt-6">
+        Регистрация команды
+      </button>
+    </article>`;
+  }).join('');
+  $$('[data-team]').forEach(b=>b.addEventListener('click',()=>openTeam(b.dataset.team)));
+}
+
+/* ================= ТОСТЫ ================= */
+const TICONS = {
+  success:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path class="draw" d="M4 12l5 5L20 7"/></svg>',
+  team:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10v6a5 5 0 0 1-10 0V3z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3M12 14v4M8 21h8"/></svg>',
+  info:'<svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>'
+};
+function showToast(type, title, msg, dur){
+  dur = dur||6000;
+  const box = $('#toasts');
+  while(box.children.length>=3) box.removeChild(box.firstChild);
+  const col = type==='success' ? '#A3E635' : type==='team' ? '#06B6D4' : '#8B5CF6';
+  const el = document.createElement('div');
+  el.className = 'toast glass-strong';
+  el.style.setProperty('--tcol', col);
+  el.innerHTML =
+    '<div class="t-ic">'+TICONS[type]+'</div>'+
+    '<div><div class="t-title">'+title+'</div><div class="t-msg">'+msg+'</div></div>'+
+    '<button type="button" class="t-x" aria-label="Закрыть уведомление"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>'+
+    '<i class="t-bar" style="animation-duration:'+dur+'ms"></i>';
+  box.appendChild(el);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('on')));
+  const kill = ()=>{ el.classList.add('off'); setTimeout(()=>el.remove(),450); };
+  const tm = setTimeout(kill, dur);
+  el.querySelector('.t-x').addEventListener('click',()=>{ clearTimeout(tm); kill(); });
+}
+
+/* ================= МОДАЛКИ ================= */
+let lastFocus = null;
+function openModal(ov){
+  lastFocus = document.activeElement;
+  ov.classList.add('open'); ov.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(ov){
+  ov.classList.remove('open'); ov.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+  if(lastFocus && lastFocus.focus) lastFocus.focus();
+}
+const bookModal = $('#bookModal'), teamModal = $('#teamModal');
+[bookModal, teamModal].forEach(ov=>{
+  ov.addEventListener('click', e=>{ if(e.target===ov) closeModal(ov); });
+  ov.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>closeModal(ov)));
+  ov.addEventListener('keydown', e=>{
+    if(e.key!=='Tab') return;
+    const f = Array.from(ov.querySelectorAll('button,input,select,a[href]')).filter(x=>!x.disabled && x.offsetParent!==null);
+    if(!f.length) return;
+    const first=f[0], last=f[f.length-1];
+    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+  });
+});
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){
+    if(bookModal.classList.contains('open')) closeModal(bookModal);
+    if(teamModal.classList.contains('open')) closeModal(teamModal);
+    closeMenu();
+  }
+});
+
+/* ---- дата/время ---- */
+const iso = d => d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const today = new Date();
+const todayStr = iso(today);
+const tomorrow = new Date(today); tomorrow.setDate(tomorrow.getDate()+1);
+const tomorrowStr = iso(tomorrow);
+(function initDateTime(){
+  const sel = $('#bk-time');
+  for(let h=0;h<24;h++){
+    const o = document.createElement('option');
+    o.value = o.textContent = String(h).padStart(2,'0')+':00';
+    sel.appendChild(o);
+  }
+  const next = (today.getHours()+1)%24;
+  sel.value = String(next).padStart(2,'0')+':00';
+  const date = $('#bk-date');
+  date.min = todayStr;
+  const max = new Date(today); max.setDate(max.getDate()+30);
+  date.max = iso(max);
+  date.value = next===0 ? tomorrowStr : todayStr;
+})();
+function dateHuman(v){
+  if(v===todayStr) return 'сегодня';
+  if(v===tomorrowStr) return 'завтра';
+  return new Date(v+'T12:00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'long'});
+}
+
+/* ---- маска телефона ---- */
+function attachMask(input){
+  input.addEventListener('input', e=>{
+    const raw = input.value;
+    let d = raw.replace(/\D/g,'');
+    if(!d){ input.value=''; return; }
+    if(d[0]==='8') d = '7'+d.slice(1);
+    if(d[0]!=='7') d = '7'+d;
+    d = d.slice(0,11);
+    if(e.inputType && e.inputType.indexOf('delete')===0 && /\D$/.test(raw)){
+      d = d.slice(0,-1);
+      if(d.length<=1){ input.value = d ? '+7 ' : ''; return; }
+    }
+    const r = d.slice(1);
+    let out = '+7';
+    if(r.length>0) out += ' ('+r.slice(0,3);
+    if(r.length>=3) out += ')';
+    if(r.length>3) out += ' '+r.slice(3,6);
+    if(r.length>6) out += '-'+r.slice(6,8);
+    if(r.length>8) out += '-'+r.slice(8,10);
+    input.value = out;
+  });
+}
+attachMask($('#bk-phone')); attachMask($('#tt-phone'));
+
+/* ---- валидация ---- */
+function setErr(input, errEl, msg){
+  input.classList.add('field-err');
+  errEl.textContent = msg; errEl.classList.remove('hidden');
+  input.classList.remove('shake'); void input.offsetWidth; input.classList.add('shake');
+}
+function clearErr(input, errEl){
+  input.classList.remove('field-err'); errEl.classList.add('hidden');
+}
+[['#bk-nick','#err-nick'],['#bk-phone','#err-phone'],['#bk-date','#err-date'],['#tt-name','#err-team'],['#tt-phone','#err-tphone']]
+.forEach(([i,e])=>{ const inp=$(i); inp.addEventListener('input',()=>clearErr(inp,$(e))); });
+
+function setLoading(btn, on, label){
+  btn.disabled = on;
+  btn.querySelector('.btn-label').textContent = on ? label : btn.dataset.label;
+  btn.querySelector('.btn-spin').classList.toggle('hidden', !on);
+}
+$('#bk-submit').dataset.label = 'Подтвердить бронь';
+$('#tt-submit').dataset.label = 'Отправить заявку';
+
+/* ---- открытие брони ---- */
+function openBooking(){
+  const z = ZONES[state.zone], c = calcState();
+  const chip = $('#bm-zone');
+  chip.textContent = z.name;
+  chip.style.color = z.color;
+  chip.style.borderColor = 'color-mix(in srgb,'+z.color+' 55%,transparent)';
+  chip.style.background  = 'color-mix(in srgb,'+z.color+' 10%,transparent)';
+  $('#bm-free').textContent = z.free>0 ? z.free+' '+z.unit+' свободно' : 'мест пока нет — лист ожидания';
+  $('#bm-free').style.color = z.free>0 ? '#A3E635' : '#FBBF24';
+  $('#bm-pack').textContent = state.hours+' '+plural(state.hours,HOURS_W)+' × '+state.pcs+' ПК · '+fmt(z.rate)+' ₽/час'+(state.zone==='vip'?' · 1 буткемп':'');
+  let ex = '';
+  if(c.pack)   ex += '<span class="chip !py-1 !text-[10px] !border-nx-lime/40 text-nx-lime">⚡ пакет −10%</span>';
+  if(c.night)  ex += '<span class="chip !py-1 !text-[10px] !border-nx-vio/50 text-nx-vio2">🌙 ночь −30%</span>';
+  if(c.snacks) ex += '<span class="chip !py-1 !text-[10px] !border-nx-cyn/40 text-nx-cyn2">🥤 снеки × '+state.pcs+'</span>';
+  $('#bm-extras').innerHTML = ex || '<span class="font-mono text-[10.5px] text-nx-mut">без доп. опций</span>';
+  tween($('#bm-total'), c.total);
+  openModal(bookModal);
+  setTimeout(()=>$('#bk-nick').focus(), 280);
+}
+$$('[data-book]').forEach(b=>b.addEventListener('click',()=>{
+  if(b.dataset.zone) setZone(b.dataset.zone,'book');
+  closeMenu();
+  openBooking();
+}));
+$('#bm-edit').addEventListener('click',()=>{
+  closeModal(bookModal);
+  $('#calculator').scrollIntoView({behavior: RM?'auto':'smooth'});
+});
+
+/* ---- отправка брони ---- */
+$('#bookForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const nick=$('#bk-nick'), phone=$('#bk-phone'), date=$('#bk-date');
+  let ok = true;
+  if(nick.value.trim().length<2){ setErr(nick,$('#err-nick'),'Никнейм — минимум 2 символа'); ok=false; }
+  if(phone.value.replace(/\D/g,'').length!==11){ setErr(phone,$('#err-phone'),'Введите номер полностью'); ok=false; }
+  if(!date.value || date.value<todayStr){ setErr(date,$('#err-date'),'Выберите дату не раньше сегодня'); ok=false; }
+  if(!ok) return;
+  const btn = $('#bk-submit');
+  setLoading(btn,true,'Подтверждаем…');
+  setTimeout(()=>{
+    setLoading(btn,false);
+    closeModal(bookModal);
+    const z = ZONES[state.zone];
+    const time = $('#bk-time').value;
+    const id = 'NX-'+(1000+Math.floor(Math.random()*9000));
+    if(z.free<=0){
+      showToast('info','Ты в листе ожидания','Свободных мест в '+z.name+' сейчас нет — админ перезвонит, как только место освободится. Заявка '+id+'.');
+    } else {
+      z.free = Math.max(0, z.free - (state.zone==='vip'?1:state.pcs));
+      renderMapDots(); updateFree(z);
+      showToast('success','Бронь подтверждена! Ждем в клубе',
+        esc(nick.value.trim())+' · '+z.name+' · '+state.hours+' '+plural(state.hours,HOURS_W)+' · '+dateHuman(date.value)+', '+time+' · бронь '+id);
+    }
+  }, 900);
+});
+
+/* ---- турнирная заявка ---- */
+let currentTeam = null;
+function openTeam(id){
+  const t = TOURNEYS.find(x=>x.id===id);
+  if(!t || t.joined || t.taken>=t.slots) return;
+  currentTeam = t;
+  $('#tm-title').textContent = t.game+' · '+t.title;
+  $('#tm-chips').innerHTML =
+    '<span class="chip !py-1 !text-[10px]" style="color:'+t.color+';border-color:color-mix(in srgb,'+t.color+' 50%,transparent)">'+t.game+'</span>'+
+    '<span class="chip !py-1 !text-[10px]">📅 '+t.dateFull+'</span>'+
+    '<span class="chip !py-1 !text-[10px] !border-nx-amber/40 text-nx-amber">🏆 '+fmt(t.prize)+' ₽</span>'+
+    '<span class="chip !py-1 !text-[10px]">взнос '+t.fee+'</span>';
+  openModal(teamModal);
+  setTimeout(()=>$('#tt-name').focus(), 280);
+}
+$('#teamForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  if(!currentTeam) return;
+  const name=$('#tt-name'), phone=$('#tt-phone');
+  let ok = true;
+  if(name.value.trim().length<2){ setErr(name,$('#err-team'),'Название — минимум 2 символа'); ok=false; }
+  if(phone.value.replace(/\D/g,'').length!==11){ setErr(phone,$('#err-tphone'),'Введите номер полностью'); ok=false; }
+  if(!ok) return;
+  const btn = $('#tt-submit');
+  setLoading(btn,true,'Отправляем…');
+  const t = currentTeam, teamName = name.value.trim();
+  setTimeout(()=>{
+    setLoading(btn,false);
+    closeModal(teamModal);
+    t.taken = Math.min(t.slots, t.taken+1);
+    t.joined = true;
+    $('#tn-count-'+t.id).textContent = t.taken+'/'+t.slots;
+    $('#tn-bar-'+t.id).style.width = Math.round(t.taken/t.slots*100)+'%';
+    const cardBtn = document.querySelector('[data-team="'+t.id+'"]');
+    cardBtn.classList.add('btn-done');
+    cardBtn.innerHTML = '✓ Заявка отправлена';
+    cardBtn.disabled = true;
+    showToast('team','Заявка принята!', esc(teamName)+' на '+t.game+' · '+t.title+' — менеджер напишет капитану в течение часа.');
+  }, 700);
+});
+
+/* ================= КАЛЬКУЛЯТОР: СОБЫТИЯ ================= */
+$$('[data-czone]').forEach(b=>b.addEventListener('click',()=>setZone(b.dataset.czone,'calc')));
+$('#hoursRange').addEventListener('input', e=>{ state.hours = +e.target.value; renderCalc(); });
+$('#pcs-minus').addEventListener('click',()=>{ state.pcs = Math.max(1,state.pcs-1); renderCalc(); });
+$('#pcs-plus').addEventListener('click',()=>{ state.pcs = Math.min(maxPcs(),state.pcs+1); renderCalc(); });
+$('#in-snacks').addEventListener('change', e=>{ state.snacks = e.target.checked; renderCalc(); });
+$('#in-night').addEventListener('change',  e=>{ state.night  = e.target.checked; renderCalc(); });
+
+/* ================= ВКЛАДКИ / СХЕМА ================= */
+$$('.zone-tab').forEach(t=>t.addEventListener('click',()=>setZone(t.dataset.zone,'tabs')));
+$$('.lg-chip').forEach(c=>c.addEventListener('click',()=>setZone(c.dataset.zone,'map')));
+['standard','pro','vip'].forEach(k=>{
+  const g = $('#mm-'+k);
+  g.addEventListener('click',()=>setZone(k,'map'));
+  g.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setZone(k,'map'); } });
+});
+const tabList = $('.zone-tab').parentElement;
+tabList.addEventListener('keydown', e=>{
+  if(e.key!=='ArrowRight' && e.key!=='ArrowLeft') return;
+  const keys = ['standard','pro','vip'];
+  let i = keys.indexOf(state.zone);
+  i = (i + (e.key==='ArrowRight'?1:-1) + 3) % 3;
+  setZone(keys[i],'tabs');
+  document.querySelector('.zone-tab[data-zone="'+keys[i]+'"]').focus();
+});
+
+/* ================= МОБИЛЬНОЕ МЕНЮ ================= */
+const burger = $('#burger'), mMenu = $('#mobileMenu');
+function closeMenu(){ burger.classList.remove('open'); mMenu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+burger.addEventListener('click',()=>{
+  const open = mMenu.classList.toggle('open');
+  burger.classList.toggle('open',open);
+  burger.setAttribute('aria-expanded',open);
+});
+$$('#mobileMenu a').forEach(a=>a.addEventListener('click',closeMenu));
+
+/* ================= СКРОЛЛ: ШАПКА / ПРОГРЕСС / ПАРАЛЛАКС ================= */
+const header = $('#siteHeader'), progress = $('#scrollProgress'), backTop = $('#backTop');
+const ghosts = $$('.ghost');
+let ticking = false;
+function onScroll(){
+  if(ticking) return;
+  ticking = true;
+  requestAnimationFrame(()=>{
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y>24);
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (h>0 ? (y/h*100) : 0)+'%';
+    backTop.classList.toggle('show', y>700);
+    if(!RM) ghosts.forEach(g=>{
+      const r = g.parentElement.getBoundingClientRect();
+      const off = (r.top + r.height/2 - window.innerHeight/2) * parseFloat(g.dataset.speed||'0.1');
+      g.style.transform = 'translateY('+off.toFixed(1)+'px)'+(g.classList.contains('left-1/2')?' translateX(-50%)':'');
+    });
+    ticking = false;
+  });
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:RM?'auto':'smooth'}));
+
+/* ================= НАБЛЮДАТЕЛИ ================= */
+function initObservers(){
+  const rev = new IntersectionObserver(es=>es.forEach(en=>{
+    if(en.isIntersecting){ en.target.classList.add('in'); rev.unobserve(en.target); }
+  }),{threshold:.12});
+  $$('[data-reveal]').forEach(el=>rev.observe(el));
+
+  const nav = new IntersectionObserver(es=>es.forEach(en=>{
+    if(en.isIntersecting){
+      $$('.nav-link').forEach(l=>l.classList.toggle('active', l.dataset.nav===en.target.id));
+    }
+  }),{rootMargin:'-40% 0px -55% 0px'});
+  ['zones','tariffs','calculator','tournaments','contacts'].forEach(id=>{
+    const s = document.getElementById(id); if(s) nav.observe(s);
+  });
+
+  const cnt = new IntersectionObserver(es=>es.forEach(en=>{
+    if(!en.isIntersecting) return;
+    cnt.unobserve(en.target);
+    en.target.querySelectorAll('[data-count]').forEach(el=>{
+      const target = +el.dataset.count;
+      if(RM){ el.textContent = target; return; }
+      const t0 = performance.now(), dur = 1400;
+      const step = t=>{
+        const p = Math.min(1,(t-t0)/dur);
+        el.textContent = Math.round(target*(1-Math.pow(1-p,3)));
+        if(p<1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+  }),{threshold:.4});
+  cnt.observe($('#heroStats'));
+}
+
+/* ================= ЧАСТИЦЫ ================= */
+(function particles(){
+  if(RM) return;
+  const cv = $('#fx'), ctx = cv.getContext('2d');
+  let W,H,DPR, parts=[], raf=null, mx=0, my=0, ox=0, oy=0;
+  const COLS = ['139,92,246','6,182,212','232,121,249'];
+  function resize(){
+    DPR = Math.min(window.devicePixelRatio||1, 1.75);
+    W = window.innerWidth; H = window.innerHeight;
+    cv.width = W*DPR; cv.height = H*DPR;
+    const n = W<768 ? 26 : 56;
+    parts = [];
+    for(let i=0;i<n;i++) parts.push({
+      x:Math.random()*W, y:Math.random()*H,
+      r:.6+Math.random()*1.9, s:.12+Math.random()*.5,
+      ph:Math.random()*6.28, c:COLS[Math.floor(Math.random()*COLS.length)],
+      a:.14+Math.random()*.4
+    });
+  }
+  function loop(t){
+    ox += (mx*14-ox)*.04; oy += (my*10-oy)*.04;
+    ctx.setTransform(DPR,0,0,DPR,ox*DPR,oy*DPR);
+    ctx.clearRect(-30,-30,W+60,H+60);
+    for(const p of parts){
+      p.y -= p.s;
+      p.x += Math.sin(t/1800+p.ph)*.18;
+      if(p.y<-12){ p.y = H+12; p.x = Math.random()*W; }
+      if(p.x<-12) p.x = W+12; if(p.x>W+12) p.x = -12;
+      const a = p.a*(.6+.4*Math.sin(t/900+p.ph));
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.283);
+      ctx.fillStyle = 'rgba('+p.c+','+a.toFixed(3)+')'; ctx.fill();
+      if(p.r>1.9){
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.r*3,0,6.283);
+        ctx.fillStyle = 'rgba('+p.c+','+(a*.12).toFixed(3)+')'; ctx.fill();
+      }
+    }
+    raf = requestAnimationFrame(loop);
+  }
+  let rT;
+  window.addEventListener('resize',()=>{ clearTimeout(rT); rT = setTimeout(resize,150); });
+  window.addEventListener('pointermove',e=>{ mx = e.clientX/W-.5; my = e.clientY/H-.5; },{passive:true});
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden){ if(raf) cancelAnimationFrame(raf); raf=null; }
+    else if(!raf){ raf = requestAnimationFrame(loop); }
+  });
+  resize();
+  raf = requestAnimationFrame(loop);
+})();
+
+/* ================= ТЕЛЕМЕТРИЯ / ЧАСЫ / ФИД ================= */
+(function telemetry(){
+  let fps=537, temp=57, ping=4, load=96;
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const rnd=()=>Math.round(Math.random()*6-3);
+  const clock = $('#rigClock'), feed = $('#rigFeed');
+  const FEED = [
+    'STATION_12 ▸ ACE в CS2 на Mirage',
+    'VIP_02 ▸ буткемп NIGHT RAID запущен',
+    'PRO_07 ▸ 540 FPS стабильно, полёт нормальный',
+    'BAR ▸ свежая партия энергетиков в холодильнике',
+    'STATION_31 ▸ клатч 1v3 — зал орёт',
+    'PRO_03 ▸ катка найдена за 14 секунд'
+  ];
+  let fi = 0;
+  setInterval(()=>{
+    clock.textContent = 'MSK '+new Date().toLocaleTimeString('ru-RU',{timeZone:'Europe/Moscow',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  },1000);
+  setInterval(()=>{
+    fps=clamp(fps+rnd(),524,546); temp=clamp(temp+rnd(),54,63);
+    ping=clamp(ping+Math.round(Math.random()*4-2),2,8); load=clamp(load+rnd(),88,99);
+    $('#tlFps').textContent=fps; $('#tlTemp').textContent=temp;
+    $('#tlPing').textContent=ping; $('#tlLoad').textContent=load;
+    $('#tlFpsBar').style.width=(fps/600*100).toFixed(1)+'%';
+  },2000);
+  setInterval(()=>{
+    feed.style.opacity='0';
+    setTimeout(()=>{ fi=(fi+1)%FEED.length; feed.textContent=FEED[fi]; feed.style.opacity='1'; },300);
+  },4200);
+})();
+
+/* ================= TILT ПАНЕЛИ ================= */
+(function tilt(){
+  if(RM || !window.matchMedia('(pointer:fine)').matches) return;
+  const wrap = $('#rigTilt').parentElement, el = $('#rigTilt');
+  wrap.addEventListener('pointermove',e=>{
+    const r = wrap.getBoundingClientRect();
+    const px = (e.clientX-r.left)/r.width-.5, py = (e.clientY-r.top)/r.height-.5;
+    el.style.transform = 'rotateY('+(px*7).toFixed(2)+'deg) rotateX('+(-py*6).toFixed(2)+'deg)';
+  });
+  wrap.addEventListener('pointerleave',()=>{ el.style.transform=''; });
+})();
+
+/* ================= СТАРТ ================= */
+$$('[data-night]').forEach(el=>{
+  const z = ZONES[el.dataset.night];
+  el.textContent = fmt(8*z.rate*0.6);
+});
+$('#year').textContent = new Date().getFullYear();
+renderTournaments();
+renderMapDots();
+setZone(state.zone,'init');
+renderCalc();
+initObservers();
+onScroll();
+})();
+</script>
+</body>
+</html>
